@@ -38,7 +38,7 @@ echo "[10] Supported Sites"
 echo "[11] Ganti URL Baru"
 echo "[13] Hubungi Coder"
 echo "[14] Exit Program"
-echo "------------------------------------------->
+echo "--------------------------------------------"
 read -p "Pilih Opsi : " pilih
 echo " "
 
@@ -210,16 +210,16 @@ read -p "[Tekan Enter Untuk Melanjutkan]"
 
 elif [ $pilih == 13 ]
 then
-echo "------------------------------------------->
+echo "--------------------------------------------"
 echo "                 About Me "
-echo "------------------------------------------->
+echo "--------------------------------------------"
 echo "[*] Coder    : Alfian Hakim"
 echo "[*] Language : Shell"
-echo "------------------------------------------->
+echo "--------------------------------------------"
 echo "[*] Kontak"
 echo "[1] Chat Whatsapp"
 echo "[2] Chat Telegram"
-echo "------------------------------------------->
+echo "--------------------------------------------"
 read -p "Pilih: " kontak
 echo ""
 if [ $kontak == 1 ]
