@@ -36,9 +36,9 @@ echo "[08] Cek Subtitle Yang Tersedia"
 echo "[09] Youtube Search Tools"
 echo "[10] Supported Sites"
 echo "[11] Ganti URL Baru"
-echo "[12] Update Youtube-dl"
-echo "[13] Exit Program"
-echo "--------------------------------------------"
+echo "[13] Hubungi Coder"
+echo "[14] Exit Program"
+echo "------------------------------------------->
 read -p "Pilih Opsi : " pilih
 echo " "
 
@@ -208,7 +208,33 @@ pip install --upgrade youtube-dl
 echo " "
 read -p "[Tekan Enter Untuk Melanjutkan]"
 
-elif [ $pilih == 13 ] || [ $pilih == x ]
+elif [ $pilih == 13 ]
+then
+echo "------------------------------------------->
+echo "                 About Me "
+echo "------------------------------------------->
+echo "[*] Coder    : Alfian Hakim"
+echo "[*] Language : Shell"
+echo "------------------------------------------->
+echo "[*] Kontak"
+echo "[1] Chat Whatsapp"
+echo "[2] Chat Telegram"
+echo "------------------------------------------->
+read -p "Pilih: " kontak
+echo ""
+if [ $kontak == 1 ]
+then
+xdg-open https://wa.me/62895360702055
+read -p "[Tekan Enter Untuk Melanjutkan]"
+elif [ $kontak == 2 ]
+then
+xdg-open https://t.me/alfian_hakim
+read -p "[Tekan Enter Untuk Melanjutkan]"
+else
+echo "Pilih Kontak !!"
+fi
+
+elif [ $pilih == 14 ] || [ $pilih == x ]
 then
 exit
 
