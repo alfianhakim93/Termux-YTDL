@@ -35,7 +35,7 @@ echo "[08] Cek Subtitle Yang Tersedia"
 echo "[09] Youtube Search Tools"
 echo "[10] Supported Sites"
 echo "[11] Ganti URL Baru"
-echo "[12] Update Yotube-dl"
+echo "[12] Update Youtube-dl"
 echo "[13] Exit Program"
 echo "--------------------------------------------"
 read -p "Pilih Opsi : " pilih
