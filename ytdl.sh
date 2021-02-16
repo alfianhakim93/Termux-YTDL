@@ -16,6 +16,7 @@ read -p "Masukan URL : " URL
 while :
 do
 clear
+echo -e "\e[92m \e[1m"
 echo "============================================"
 echo "               SELAMAT DATANG"
 echo "         GUNAKAN TOOLS DENGAN BIJAK"
