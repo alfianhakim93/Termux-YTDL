@@ -6,7 +6,7 @@ best="-c -i --hls-prefer-native --add-metadata --merge-output-format mp4"
 bad="-c -i -f worstvideo+worstaudio --hls-prefer-native --add-metadata --merge-output-format mp4"
 
 clear
-echo "\e[92m \e[1m"
+echo -e "\e[92m \e[1m"
 echo "============================================"
 echo "              YOUTUBE-DL TOOLS"
 echo "                  By Alfian"
