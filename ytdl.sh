@@ -106,6 +106,7 @@ echo "          Download Subtitle Only"
 echo "--------------------------------------------"
 echo "[1] Semua Subtitle"
 echo "[2] Satuan (en,id,kr,dll)"
+echo "[3] Kembali"
 echo "--------------------------------------------"
 read -p "Pilih : " opsub
 echo " "
@@ -119,6 +120,9 @@ read -p "Kode Bahasa : " Sub
 echo " "
 echo "Tunggu Sebentar..."
 youtube-dl --write-sub --sub-lang $Sub --convert-subs srt --skip-download -o $ke $URL
+elif [ $opsub == 3 ]
+then
+echo ""
 else
 echo "Pilih Dengan Benar !!"
 fi
