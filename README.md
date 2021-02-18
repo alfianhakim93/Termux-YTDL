@@ -3,12 +3,11 @@
 Script ini berfungsi untuk mendownload video dan audio dari YouTube dan dari ratusan situs lainnya, Seperti : <br>
 - YouTube
 - Instagram
-- Twitter
-- Spotify <br>
+- Twitter <br>
 List Situs Selengkapnya ada di : <br>
 https://ytdl-org.github.io/youtube-dl/supportedsites.html <br>
 <p align="center">
-  <img alt="Smiley face" src="https://4.bp.blogspot.com/-qKxrxikFicQ/Xp68DDj3GNI/AAAAAAAAMXs/ILs0_4M5ojsi8dZqDbGmjAL12NSnWVqzACK4BGAYYCw/s1600/Download%2BYoutube%2BVideos%2Bwith%2BTr%253Dermux.png">
+  <img alt="YTDL1" src="https://drive.google.com/uc?export=view&id=1he148VIqNHrU600FYiv9t0BfFcucgQ8O">
 </p>
 <br>
 
