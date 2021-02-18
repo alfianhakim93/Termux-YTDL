@@ -6,8 +6,8 @@
 clear
 echo -e "\e[92m \e[1m"
 echo "============================================"
-echo "           YOUTUBE-DL INSTALLER"
-echo "                By ALFIAN"
+echo "            YOUTUBE-DL INSTALLER"
+echo "                 By ALFIAN"
 echo "============================================"
 echo "[*] Apa itu Youtube-dl ??"
 echo "[-] Youtube-dl adalah sebuah command line"
