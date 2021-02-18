@@ -49,7 +49,8 @@ mkdir -p /data/data/com.termux/files/bin/ytdl
 echo -e 'tema="\e[39m \e[1m"' > /data/data/com.termux/files/bin/ytdl/tema.txt
 
 echo -e '\nPATH="$PATH:/data/data/com.termux/files/home/Termux-YTDL"' >> /data/data/com.termux/files/usr/etc/bash.bashrc
-. bash.bashrc
+. /data/data/com.termux/files/usr/etc/bash.bashrc
+chmod +x Termux-YTDL/ytdl.sh
 
 echo -e "\e[92m \e[1m"
 echo "Install Selesai !!"
