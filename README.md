@@ -4,7 +4,7 @@ Script ini berfungsi untuk mendownload video dan audio dari YouTube dan dari rat
 - YouTube
 - Instagram
 - Twitter
-- Spotify
+- Spotify <br>
 List Situs Selengkapnya ada di : <br>
 https://ytdl-org.github.io/youtube-dl/supportedsites.html <br>
 <p align="center">
