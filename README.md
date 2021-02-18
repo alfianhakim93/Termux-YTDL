@@ -7,7 +7,7 @@ Script ini berfungsi untuk mendownload video dan audio dari YouTube dan dari rat
 List Situs Selengkapnya ada di : <br>
 https://ytdl-org.github.io/youtube-dl/supportedsites.html <br>
 <p align="center">
-  <img alt="YTDL1" width="300" height="600" src="https://drive.google.com/uc?export=view&id=1he148VIqNHrU600FYiv9t0BfFcucgQ8O">
+  <img alt="YTDL1" width="300" height="600" src="https://drive.google.com/uc?export=view&id=1J4Q_DQrHrgT5uCw0n9EvneOtOeMsPNdp">
 </p>
 <br>
 
