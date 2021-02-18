@@ -8,7 +8,7 @@ Script ini berfungsi untuk mendownload video dan audio dari YouTube dan dari Rib
 https://ytdl-org.github.io/youtube-dl/supportedsites.html <br>
 
 ### Me:
-Author👨‍💻: https://github.com/alfianhakim93 <br>
+Author👨‍💻: https://github.com/alfianhakim93/ <br>
 Telegram : https://t.me/alfian_hakim <br>
 
 ### Instalasi dan Penggunaan :
