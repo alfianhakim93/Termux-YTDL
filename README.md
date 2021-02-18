@@ -9,7 +9,6 @@ https://ytdl-org.github.io/youtube-dl/supportedsites.html <br>
 <p align="center">
   <img alt="YTDL1" width="300" height="400" src="https://drive.google.com/uc?export=view&id=1J4Q_DQrHrgT5uCw0n9EvneOtOeMsPNdp">
 </p>
-<br>
 
 ### Me:
 Author👨‍💻: https://github.com/alfianhakim93 <br>
