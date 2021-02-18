@@ -27,22 +27,28 @@ echo ""
 if [ $pilih == y ] || [ $pilih == Y ]
 then
 
-echo "Meminta Akses Storage"
-sleep 2
-echo "Berikan Izin Akses Storage"
-sleep 2
-termux-setup-storage
-sleep 5
-
-echo "Installing Pyhton"
+echo "============================================"
+echo "            Installing Pyhton"
+echo "============================================"
 pkg install -y python
 pip install --upgrade -y pip
 
-echo "Installing Youtube-dl"
+echo "============================================"
+echo "          Installing Youtube-dl"
+echo "============================================"
 pip install --upgrade youtube-dl
 
-echo "Installing FFmpeg"
+echo "============================================"
+echo "            Installing FFmpeg"
+echo "============================================"
 pkg install -y ffmpeg
+
+echo "============================================"
+echo "        Meminta Izin Akses Storage"
+echo "============================================"
+sleep 2
+termux-setup-storage
+sleep 5
 
 mkdir -p /data/data/com.termux/files/bin/ytdl
 echo -e 'tema="\e[39m \e[1m"' > /data/data/com.termux/files/bin/ytdl/tema.txt
