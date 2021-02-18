@@ -29,6 +29,7 @@ Jika tidak bisa jalankan dengan "./Termux-YTDL/ytdl.sh <br>
 - Terdapat Fitur Custom Download
 - Dapat Memilih Kualitas Unduhan
 - Dapat Mendownload Video dan Subtitlenya
+- Dan Lainnya.
 
 <br>
 <br>
