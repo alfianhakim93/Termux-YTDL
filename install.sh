@@ -27,22 +27,26 @@ echo ""
 if [ $pilih == y ] || [ $pilih == Y ]
 then
 
+echo -e "\e[92m \e[1m"
 echo "============================================"
 echo "            Installing Pyhton"
 echo "============================================"
 pkg install -y python
 pip install --upgrade -y pip
 
+echo -e "\e[92m \e[1m"
 echo "============================================"
 echo "          Installing Youtube-dl"
 echo "============================================"
 pip install --upgrade youtube-dl
 
+echo -e "\e[92m \e[1m"
 echo "============================================"
 echo "            Installing FFmpeg"
 echo "============================================"
 pkg install -y ffmpeg
 
+echo -e "\e[92m \e[1m"
 echo "============================================"
 echo "        Meminta Izin Akses Storage"
 echo "============================================"
@@ -58,9 +62,11 @@ echo -e '\nPATH="$PATH:/data/data/com.termux/files/home/Termux-YTDL"' >> /data/d
 chmod +x Termux-YTDL/ytdl.sh
 
 echo -e "\e[92m \e[1m"
+echo "============================================"
 echo "Install Selesai !!"
 echo "Gunakan Script Dengan Baik !!"
 echo "Ketik ytdl.sh lalu enter untuk Run Script"
+echo "============================================"
 
 else
 exit
