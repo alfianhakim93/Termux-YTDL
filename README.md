@@ -16,7 +16,7 @@ Telegram : https://t.me/alfian_hakim <br>
 
 ### Instalasi dan Penggunaan :
 - Install : <br>
-pkg update && apt install -y git && git clone https://github.com/alfianhakim93/Termux-YTDL/ && bash Termux-YTDL/install.sh <br>
+pkg update && apt install -y git && git clone https://github.com/alfianhakim93/Termux-YTDL/ && bash Termux-YTDL/install.sh <br><br>
 - Penggunaan : <br>
 Ketikan "ytdl.sh" Lalu Enter. <br>
 Jika tidak bisa jalankan dengan "./Termux-YTDL/ytdl.sh <br>
