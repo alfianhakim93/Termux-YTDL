@@ -10,7 +10,6 @@ https://ytdl-org.github.io/youtube-dl/supportedsites.html <br>
 ### Me:
 Author👨‍💻: https://github.com/alfianhakim93 <br>
 Telegram : https://t.me/alfian_hakim <br>
-<br>
 
 ### Instalasi dan Penggunaan :
 - Install : <br>
@@ -18,8 +17,6 @@ pkg update && apt install -y git && git clone https://github.com/alfianhakim93/T
 - Penggunaan : <br>
 Ketikan "ytdl.sh" Lalu Enter. <br>
 Jika tidak bisa jalankan dengan "./Termux-YTDL/ytdl.sh" <br>
-
-<br>
 
 ### Features:
 - Dapat Mendownload Audio Only
