@@ -1,4 +1,7 @@
 #!/bin/bash
+#Project  : Termux-YTDL
+#Coder    : Alfian Hakim
+#Language : Shell
 
 clear
 echo -e "\e[92m \e[1m"
