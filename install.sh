@@ -60,6 +60,7 @@ chmod +x Termux-YTDL/ytdl.sh
 echo -e "\e[92m \e[1m"
 echo "Install Selesai !!"
 echo "Gunakan Script Dengan Baik !!"
+echo "Ketik ytdl.sh lalu enter untuk Run Script"
 
 else
 exit
