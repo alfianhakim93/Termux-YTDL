@@ -50,6 +50,7 @@ echo -e "\e[92m \e[1m"
 echo "============================================"
 echo "        Meminta Izin Akses Storage"
 echo "============================================"
+echo "Pilih Izinkan!!"
 sleep 2
 termux-setup-storage
 sleep 5
@@ -58,19 +59,17 @@ mkdir -p /data/data/com.termux/files/bin/ytdl
 echo -e 'tema="\e[39m \e[1m"' > /data/data/com.termux/files/bin/ytdl/tema.txt
 
 echo -e '\nPATH="$PATH:/data/data/com.termux/files/home/Termux-YTDL"' >> /data/data/com.termux/files/usr/etc/bash.bashrc
-sleep 1
-cd /data/data/com.termux/files/usr/etc/
-sleep 1
-. bash.bashrc
-cd
-chmod +x Termux-YTDL/ytdl.sh
 
+. /data/data/com.termux/files/usr/etc/bash.bashrc
+chmod +x Termux-YTDL/ytdl.sh
+. /data/data/com.termux/files/usr/etc/bash.bashrc
 echo -e "\e[92m \e[1m"
 echo "============================================"
 echo "Install Selesai !!"
 echo "Gunakan Script Dengan Baik !!"
 echo "Ketik ytdl.sh lalu enter untuk Run Script"
 echo "============================================"
+. /data/data/com.termux/files/usr/etc/bash.bashrc
 
 else
 exit
