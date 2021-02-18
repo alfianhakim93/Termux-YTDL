@@ -27,9 +27,6 @@ echo ""
 if [ $pilih == y ] || [ $pilih == Y ]
 then
 
-echo "Updating Default Package"
-pkg -y update
-
 echo "Meminta Akses Storage"
 sleep 2
 echo "Berikan Izin Akses Storage"
