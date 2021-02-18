@@ -1,4 +1,7 @@
 #!/bin/bash
+#Project  : Termux-YTDL
+#Coder    : Alfian Hakim
+#Language : Shell
 
 ke="storage/downloads/ytdl/%(title)s.%(ext)s"
 mp3="-c -i --embed-thumbnail --hls-prefer-native --add-metadata -f bestaudio/best -x --audio-quality 1 --audio-format mp3"
