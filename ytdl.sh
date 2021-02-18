@@ -248,6 +248,7 @@ echo "--------------------------------------------"
 echo "[*] Kontak :"
 echo "[1] Chat Whatsapp"
 echo "[2] Chat Telegram"
+echo "[3] Kembali"
 echo "--------------------------------------------"
 read -p "Pilih: " kontak
 echo ""
@@ -259,6 +260,9 @@ elif [ $kontak == 2 ]
 then
 xdg-open https://t.me/alfian_hakim
 read -p "[Tekan Enter Untuk Melanjutkan]"
+elif [ $kontak == 3 ]
+then
+echo " "
 else
 echo "Pilih Kontak !!"
 fi
