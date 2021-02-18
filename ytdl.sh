@@ -3,7 +3,7 @@
 #Coder    : Alfian Hakim
 #Language : Shell
 
-ke="storage/downloads/ytdl/%(title)s.%(ext)s"
+ke="/data/data/com.termux/files/home/storage/shared/Youtube-DL/%(title)s.%(ext)s"
 mp3="-c -i --embed-thumbnail --hls-prefer-native --add-metadata -f bestaudio/best -x --audio-quality 1 --audio-format mp3"
 best="-c -i --hls-prefer-native --add-metadata --merge-output-format mp4"
 bad="-c -i -f worstvideo+worstaudio --hls-prefer-native --add-metadata --merge-output-format mp4"
