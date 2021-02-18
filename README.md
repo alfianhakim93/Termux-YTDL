@@ -19,7 +19,7 @@ Ketikan "ytdl.sh" Lalu Enter. <br>
 Jika tidak bisa, jalankan dengan "./Termux-YTDL/ytdl.sh" <br>
 
 ### Features:
-- Dapat Mendownload Audio Only
+- Dapat Mendownload Mp3
 - Terdapat Fitur Custom Download
 - Dapat Memilih Kualitas Unduhan
 - Dapat Mendownload Video dan Subtitlenya
