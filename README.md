@@ -16,7 +16,7 @@ Telegram : https://t.me/alfian_hakim <br>
 pkg update && apt install -y git && git clone https://github.com/alfianhakim93/Termux-YTDL/ && bash Termux-YTDL/install.sh <br><br>
 - Penggunaan : <br>
 Ketikan "ytdl.sh" Lalu Enter. <br>
-Jika tidak bisa jalankan dengan "./Termux-YTDL/ytdl.sh" <br>
+Jika tidak bisa, jalankan dengan "./Termux-YTDL/ytdl.sh" <br>
 
 ### Features:
 - Dapat Mendownload Audio Only
