@@ -1,6 +1,6 @@
 # Termux-YTDL
 #### Termux Youtube-DL
-Script ini berfungsi untuk mendownload video dan audio dari YouTube dan dari ratusan situs lainnya, Seperti : <br>
+Script ini berfungsi untuk mendownload video dan audio dari YouTube dan dari Ribuan situs lainnya, Seperti : <br>
 - YouTube
 - Instagram
 - Twitter
