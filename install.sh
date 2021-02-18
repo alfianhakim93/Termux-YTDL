@@ -53,10 +53,18 @@ echo -e "\e[92m \e[1m"
 echo "============================================"
 echo "        Meminta Izin Akses Storage"
 echo "============================================"
-echo "Pilih Izinkan!!"
-sleep 2
+echo "CATATAN :"
+echo "JIKA SUDAH MEMILIKI AKSES STORAGE,"
+echo "SILAHKAN PILIH 'N' AGAR TIDAK TERJADI ERROR"
+echo "============================================"
+read -p "Minta Akses Storage (Y/n) : " akses
+if [ $akses == y ] || [ $akses == Y ]
+then
 termux-setup-storage
 sleep 5
+else
+echo ""
+fi
 
 mkdir -p /data/data/com.termux/files/bin/ytdl
 echo -e 'tema="\e[96m \e[1m"' > /data/data/com.termux/files/bin/ytdl/tema.txt
@@ -72,7 +80,6 @@ echo "Install Selesai !!"
 echo "Gunakan Script Dengan Baik !!"
 echo "Ketik ytdl.sh lalu enter untuk Run Script"
 echo "============================================"
-. /data/data/com.termux/files/usr/etc/bash.bashrc
 
 else
 exit
