@@ -73,6 +73,9 @@ echo "Gunakan Script Dengan Baik !!"
 echo "Ketik ytdl.sh lalu enter untuk Run Script"
 echo "============================================"
 . /data/data/com.termux/files/usr/etc/bash.bashrc
+echo ""
+read -p "[Restart Termux !!]
+exit
 
 else
 exit
