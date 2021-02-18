@@ -46,7 +46,7 @@ echo "[13] Informasi Tools"
 echo "[14] Ganti Warna Tema"
 echo "[15] Exit Program"
 echo "--------------------------------------------"
-read -p "Pilih Opsi : " pilih
+read -p "Pilih Opsi [01-15] : " pilih
 echo " "
 
 if [ $pilih == 1 ] || [ $pilih == 01 ]
@@ -170,7 +170,8 @@ youtube-dl -e "ytsearch:$kunci"
 echo "--------------------------------------------"
 echo "[1] Download Audio Only (mp3)"
 echo "[2] Download Video Custom"
-echo "[3] Kembali"
+echo "[3] Download Video + Subtitle"
+echo "[4] Kembali"
 echo "--------------------------------------------"
 read -p "Pilih : " yts
 echo " "
@@ -185,7 +186,25 @@ read -p "Format (mp4,mkv,webm)      : " Format
 echo " "
 echo "Loading...."
 youtube-dl -c -i --hls-prefer-native --add-metadata -f "bestvideo[height<=$Resolusi]+bestaudio/best[height<=$Resolusi]" --merge-output-format $Format "ytsearch:$kunci" -o $ke 
+
 elif [ $yts == 3 ]
+then
+echo "--------------------------------------------"
+echo "         Download Video + Subtitle"
+echo "--------------------------------------------"
+read -p "Resolusi (240,360,480,720)    : " Resolusi
+read -p "Kode Subtitle (id,en,kr,dll)  : " Sub
+read -p "Embed Subtitle ? (y/n)        : " Embed
+if [ $Embed == y ] || [ $Embed == Y ]
+then
+Emsub="--embed-subs"
+else
+Emsub=""
+fi
+echo "Loading...."
+youtube-dl -c -i --write-sub --sub-lang $Sub --convert-subs srt $Emsub --hls-prefer-native --add-metadata -f "bestvideo[height<=$Resolusi]+bestaudio/best[height<=$Resolusi]" --merge-output-format mkv "ytsearch:$kunci" -o $ke
+
+elif [ $yts == 4 ]
 then
 echo " "
 else
