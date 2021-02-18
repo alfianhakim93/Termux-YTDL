@@ -1,8 +1,8 @@
 # Termux-YTDL
 #### Termux Youtube-DL
-Script ini berfungsi untuk mendownload video dan audio dari YouTube dan dari ratusan situs lainnya.
-List Situs Yang Didukung :
-https://ytdl-org.github.io/youtube-dl/supportedsites.html
+Script ini berfungsi untuk mendownload video dan audio dari YouTube dan dari ratusan situs lainnya. <br>
+List Situs Yang Didukung : <br>
+https://ytdl-org.github.io/youtube-dl/supportedsites.html <br>
 <p align="center">
   <img alt="Smiley face" src="https://4.bp.blogspot.com/-qKxrxikFicQ/Xp68DDj3GNI/AAAAAAAAMXs/ILs0_4M5ojsi8dZqDbGmjAL12NSnWVqzACK4BGAYYCw/s1600/Download%2BYoutube%2BVideos%2Bwith%2BTr%253Dermux.png">
 </p>
