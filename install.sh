@@ -66,19 +66,26 @@ else
 echo ""
 fi
 
+mkdir bin
 mkdir -p /data/data/com.termux/files/bin/ytdl
-echo -e 'tema="\e[96m \e[1m"' > /data/data/com.termux/files/bin/ytdl/tema.txt
 
+echo -e 'tema="\e[96m \e[1m"' > /data/data/com.termux/files/bin/ytdl/tema.txt
 echo -e '\nPATH="$PATH:/data/data/com.termux/files/home/Termux-YTDL"' >> /data/data/com.termux/files/usr/etc/bash.bashrc
 
-. /data/data/com.termux/files/usr/etc/bash.bashrc
+chmod +x Termux-YTDL/termux-url-opener
 chmod +x Termux-YTDL/ytdl.sh
+
+mv Termux-YTDL/termux-url-opener ~/bin
 . /data/data/com.termux/files/usr/etc/bash.bashrc
+
 echo -e "\e[92m \e[1m"
 echo "============================================"
 echo "Install Selesai !!"
-echo "Gunakan Script Dengan Baik !!"
-echo "Ketik ytdl.sh lalu enter untuk Run Script"
+echo "Silahkan Restart Termux Dahulu !!"
+echo "--------------------------------------------"
+echo "Cara Penggunaan :
+echo "1. Ketik ytdl.sh lalu enter untuk Run Script"
+echo "2. Share/bagikan link langsung ke Termux
 echo "============================================"
 
 else
