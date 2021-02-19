@@ -34,8 +34,7 @@ echo -e "\e[92m \e[1m"
 echo "============================================"
 echo "            Installing Python"
 echo "============================================"
-pkg install python -y
-pip install --upgrade pip
+pkg install -y python && pip install --upgrade pip
 
 echo -e "\e[92m \e[1m"
 echo "============================================"
