@@ -1,5 +1,5 @@
 # Termux-YTDL
-#### Termux Youtube-DL
+#### Kegunaan :
 Script ini berfungsi untuk mendownload video dan audio dari YouTube dan dari Ribuan situs lainnya, Seperti : <br>
 - YouTube
 - Instagram
@@ -15,8 +15,8 @@ Telegram : https://t.me/alfian_hakim <br>
 - Install : <br>
 pkg update && apt install -y git && git clone https://github.com/alfianhakim93/Termux-YTDL/ && bash Termux-YTDL/install.sh <br><br>
 - Penggunaan : <br>
-Ketikan "ytdl.sh" Lalu Enter. <br>
-Jika tidak bisa, jalankan dengan "./Termux-YTDL/ytdl.sh" <br>
+1.Ketik 'ytdl.sh' lalu enter untuk Run Script. <br>
+2.Share/bagikan link langsung ke Termux. <br>
 
 ### Features:
 - Dapat Mendownload Mp3
