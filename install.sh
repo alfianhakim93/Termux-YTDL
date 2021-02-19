@@ -32,7 +32,7 @@ then
 
 echo -e "\e[92m \e[1m"
 echo "============================================"
-echo "            Installing Pyhton"
+echo "            Installing Python"
 echo "============================================"
 pkg install python -y
 pip install --upgrade pip
