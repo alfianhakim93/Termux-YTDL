@@ -84,7 +84,7 @@ echo "Install Selesai !!"
 echo "Silahkan Restart Termux Dahulu !!"
 echo "--------------------------------------------"
 echo "Cara Penggunaan :
-echo "1. Ketik ytdl.sh lalu enter untuk Run Script"
+echo "1. Ketik 'ytdl.sh' lalu enter untuk Run Script"
 echo "2. Share/bagikan link langsung ke Termux
 echo "============================================"
 
