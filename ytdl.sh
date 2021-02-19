@@ -104,15 +104,27 @@ then
 echo "--------------------------------------------"
 echo "         Download Video + Subtitle"
 echo "--------------------------------------------"
-read -p "Resolusi (240,360,480,720)    : " Resolusi
-read -p "Kode Subtitle (id,en,kr,dll)  : " Sub
-read -p "Embed Subtitle ? (y/n)        : " Embed
-if [ $Embed == y ] || [ $Embed == Y ]
-then
-Emsub="--embed-subs"
-else
-Emsub=""
-fi
+echo "Resolusi :"
+echo "[1] 144p     [3] 360p     [5] 720p"
+echo "[2] 240p     [4] 480p     [6] 1080p"
+echo "--------------------------------------------"
+echo "Kode Subtitle :"
+echo "	Cek dahulu apakah video memiliki subtitle"
+echo "menggunakan fitur nomor '08'. Jika terdapat"
+echo "subtitle, cek bahasa apa saja yang tersedia"
+echo "contohnya seperti en,id,kr,my,dan lainnya."
+echo "--------------------------------------------"
+echo "Embed Subtitle :"
+echo "	Maksud Embed Subtitle adalah menggabungkan"
+echo "subtitle dengan video, jika subtitle tidak"
+echo "ingin digabung maka pilih opsi 'n'."
+echo "--------------------------------------------"
+read -p "Pilih Resolusi [1-6]   : " preso
+read -p "Masukan Kode Subtitle  : " Sub
+read -p "Embed Subtitle ? (y/n) : " Embed
+if [ $preso == 1 ]; then Resolusi="144"; elif [ $preso == 2 ]; then Resolusi="240"; elif [ $preso == 3 ]; then Resolusi="360";
+elif [ $preso == 4 ]; then Resolusi="480"; elif [ $preso == 5 ]; then Resolusi="720"; elif [ $preso == 6 ]; then Resolusi="1080"; fi
+if [ $Embed == y ] || [ $Embed == Y ]; then Emsub="--embed-subs"; else Emsub=""; fi
 echo "Loading...."
 youtube-dl -c -i --write-sub --sub-lang $Sub --convert-subs srt $Emsub --hls-prefer-native --add-metadata -f "bestvideo[height<=$Resolusi]+bestaudio/best[height<=$Resolusi]" --merge-output-format mkv -o $ke $URL
 echo " "
@@ -192,9 +204,22 @@ echo "Downloading Audio..."
 youtube-dl $mp3 "ytsearch:$kunci" -o $ke
 elif [ $yts == 2 ]
 then
-read -p "Resolusi (240,360,480,720) : " Resolusi
-read -p "Format (mp4,mkv,webm)      : " Format
-echo " "
+echo "--------------------------------------------"
+echo "           Download Video Custom"
+echo "--------------------------------------------"
+echo "Resolusi :"
+echo "[1] 144p     [3] 360p     [5] 720p"
+echo "[2] 240p     [4] 480p     [6] 1080p"
+echo "--------------------------------------------"
+echo "Format :"
+echo "[1] Mp4      [3] Webm"
+echo "[2] Mkv"
+echo "--------------------------------------------"
+read -p "Pilih Resolusi [1-6] : " preso
+read -p "Pilih Format [1-3]   : " pformat
+if [ $preso == 1 ]; then Resolusi="144"; elif [ $preso == 2 ]; then Resolusi="240"; elif [ $preso == 3 ]; then Resolusi="360";
+elif [ $preso == 4 ]; then Resolusi="480"; elif [ $preso == 5 ]; then Resolusi="720"; elif [ $preso == 6 ]; then Resolusi="1080"; fi
+if [ $pformat == 1 ]; then Format="mp4"; elif [ $pformat == 2 ]; then Format="mkv"; elif [ $pformat == 3 ]; then Format="webm"; fi
 echo "Loading...."
 youtube-dl -c -i --hls-prefer-native --add-metadata -f "bestvideo[height<=$Resolusi]+bestaudio/best[height<=$Resolusi]" --merge-output-format $Format "ytsearch:$kunci" -o $ke 
 
@@ -203,15 +228,30 @@ then
 echo "--------------------------------------------"
 echo "         Download Video + Subtitle"
 echo "--------------------------------------------"
-read -p "Resolusi (240,360,480,720)    : " Resolusi
-read -p "Kode Subtitle (id,en,kr,dll)  : " Sub
-read -p "Embed Subtitle ? (y/n)        : " Embed
-if [ $Embed == y ] || [ $Embed == Y ]
-then
-Emsub="--embed-subs"
-else
-Emsub=""
-fi
+echo "--------------------------------------------"
+echo "         Download Video + Subtitle"
+echo "--------------------------------------------"
+echo "Resolusi :"
+echo "[1] 144p     [3] 360p     [5] 720p"
+echo "[2] 240p     [4] 480p     [6] 1080p"
+echo "--------------------------------------------"
+echo "Kode Subtitle :"
+echo "	Cek dahulu apakah video memiliki subtitle"
+echo "menggunakan fitur nomor '08'. Jika terdapat"
+echo "subtitle, cek bahasa apa saja yang tersedia"
+echo "contohnya seperti en,id,kr,my,dan lainnya."
+echo "--------------------------------------------"
+echo "Embed Subtitle :"
+echo "	Maksud Embed Subtitle adalah menggabungkan"
+echo "subtitle dengan video, jika subtitle tidak"
+echo "ingin digabung maka pilih opsi 'n'."
+echo "--------------------------------------------"
+read -p "Pilih Resolusi [1-6]   : " preso
+read -p "Masukan Kode Subtitle  : " Sub
+read -p "Embed Subtitle ? (y/n) : " Embed
+if [ $preso == 1 ]; then Resolusi="144"; elif [ $preso == 2 ]; then Resolusi="240"; elif [ $preso == 3 ]; then Resolusi="360";
+elif [ $preso == 4 ]; then Resolusi="480"; elif [ $preso == 5 ]; then Resolusi="720"; elif [ $preso == 6 ]; then Resolusi="1080"; fi
+if [ $Embed == y ] || [ $Embed == Y ]; then Emsub="--embed-subs"; else Emsub=""; fi
 echo "Loading...."
 youtube-dl -c -i --write-sub --sub-lang $Sub --convert-subs srt $Emsub --hls-prefer-native --add-metadata -f "bestvideo[height<=$Resolusi]+bestaudio/best[height<=$Resolusi]" --merge-output-format mkv "ytsearch:$kunci" -o $ke
 
