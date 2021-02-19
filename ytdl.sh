@@ -81,8 +81,45 @@ then
 echo "--------------------------------------------"
 echo "           Download Video Custom"
 echo "--------------------------------------------"
-read -p "Resolusi (240,360,480,720) : " Resolusi
-read -p "Format (mp4,mkv,webm)      : " Format
+echo "Resolusi :"
+echo "[1] 144p     [3] 360p     [5] 720p"
+echo "[2] 240p     [4] 480p     [6] 1080p"
+echo "--------------------------------------------"
+echo "Format :"
+echo "[1] Mp4      [3] Webm"
+echo "[2] Mkv"
+echo "--------------------------------------------"
+read -p "Pilih Resolusi [1-6] : " preso
+read -p "Pilih Format [1-3]   : " pformat
+if [ $preso == 1 ]
+then
+Resolusi="144"
+elif [ $preso == 2 ]
+then
+Resolusi="240"
+elif [ $preso == 3 ]
+then
+Resolusi="360"
+elif [ $preso == 4 ]
+then
+Resolusi="480"
+elif [ $preso == 5 ]
+then
+Resolusi="720"
+elif [ $preso == 6 ]
+then
+Resolusi="1080"
+fi
+if [ $pformat == 1 ]
+then
+Format="mp4"
+elif [ $pformat == 2 ]
+then
+Format="mkv"
+elif [ $pformat == 3 ]
+then
+Format="webm"
+fi
 echo "Loading...."
 youtube-dl -c -i --hls-prefer-native --add-metadata -f "bestvideo[height<=$Resolusi]+bestaudio/best[height<=$Resolusi]" --merge-output-format $Format -o $ke $URL
 echo " "
