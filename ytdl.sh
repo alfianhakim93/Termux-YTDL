@@ -231,6 +231,7 @@ echo "              Supported Sites"
 echo "--------------------------------------------"
 echo -e "Silahkan Kunjungi Link Di Bawah\n"
 echo -e "https://ytdl-org.github.io/youtube-dl/supportedsites.html\n"
+xdg-open https://ytdl-org.github.io/youtube-dl/supportedsites.html
 read -p "[Tekan Enter Untuk Melanjutkan]"
 
 elif [ $pilih == 11 ]
