@@ -17,8 +17,8 @@ do
 clear
 echo -e "$tema"
 echo "============================================"
-echo "               SELAMAT DATANG"
-echo "         GUNAKAN TOOLS DENGAN BIJAK"
+echo "             YOUTUBE-DL TOOLS"
+echo "                 By Alfian"
 echo "============================================"
 echo "URL: $URL"
 echo "--------------------------------------------"
