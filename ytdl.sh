@@ -13,8 +13,8 @@ source /data/data/com.termux/files/bin/ytdl/tema.txt
 clear
 echo -e "$tema"
 echo "============================================"
-echo "              YOUTUBE-DL TOOLS"
-echo "                  By Alfian"
+echo "               SELAMAT DATANG"
+echo "         GUNAKAN TOOLS DENGAN BIJAK"
 echo "============================================"
 read -p "Masukan URL : " URL
 
@@ -23,8 +23,8 @@ do
 clear
 echo -e "$tema"
 echo "============================================"
-echo "               SELAMAT DATANG"
-echo "         GUNAKAN TOOLS DENGAN BIJAK"
+echo "              YOUTUBE-DL TOOLS"
+echo "                  By Alfian"
 echo "============================================"
 echo "URL: $URL"
 echo "--------------------------------------------"
