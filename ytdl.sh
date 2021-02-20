@@ -23,8 +23,8 @@ do
 clear
 echo -e "$tema"
 echo "============================================"
-echo "              YOUTUBE-DL TOOLS"
-echo "                  By Alfian"
+echo "             YOUTUBE-DL TOOLS"
+echo "                 By Alfian"
 echo "============================================"
 echo "URL: $URL"
 echo "--------------------------------------------"
