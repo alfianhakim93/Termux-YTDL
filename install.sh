@@ -75,7 +75,7 @@ echo -e 'tema="\e[96m \e[1m"' > /data/data/com.termux/files/bin/ytdl/tema.txt
 echo -e '\nPATH="$PATH:/data/data/com.termux/files/home/Termux-YTDL"' >> /data/data/com.termux/files/usr/etc/bash.bashrc
 
 chmod +x Termux-YTDL/termux-url-opener
-chmod +x Termux-YTDL/ytdl.sh
+chmod +x Termux-YTDL/ytdl
 
 mv Termux-YTDL/termux-url-opener ~/bin
 . /data/data/com.termux/files/usr/etc/bash.bashrc
