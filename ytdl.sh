@@ -50,14 +50,14 @@ read -p "Pilih Opsi [01-15] : " pilih;
 echo " ";
 
 if [ $pilih == 1 ] || [ $pilih == 01 ];
-then;
+then
 echo "Downloading Audio....";
 youtube-dl $mp3 -o $ke $URL;
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 2 ] || [ $pilih == 02 ];
-then;
+then
 echo "--------------------------------------------";
 echo "      Download Video Kualitas Terbaik";
 echo "--------------------------------------------";
@@ -67,7 +67,7 @@ echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 3 ] || [ $pilih == 03 ];
-then;
+then
 echo "--------------------------------------------";
 echo "       Download Video Kualitas Buruk";
 echo "--------------------------------------------";
@@ -77,7 +77,7 @@ echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 4 ] || [ $pilih == 04 ];
-then;
+then
 echo "--------------------------------------------";
 echo "           Download Video Custom";
 echo "--------------------------------------------";
@@ -100,7 +100,7 @@ echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 5 ]  || [ $pilih == 05 ];
-then;
+then
 echo "--------------------------------------------";
 echo "         Download Video + Subtitle";
 echo "--------------------------------------------";
@@ -131,7 +131,7 @@ echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 6 ] || [ $pilih == 06 ];
-then;
+then
 echo "--------------------------------------------";
 echo "          Download Subtitle Only";
 echo "--------------------------------------------";
@@ -142,17 +142,17 @@ echo "--------------------------------------------";
 read -p "Pilih : " opsub;
 echo " ";
 if [ $opsub == 1 ];
-then;
+then
 echo "Tunggu Sebentar...";
 youtube-dl --all-subs --skip-download -o $ke $URL;
 elif [ $opsub == 2 ];
-then;
+then
 read -p "Kode Bahasa : " Sub;
 echo " ";
 echo "Tunggu Sebentar...";
 youtube-dl --write-sub --sub-lang $Sub --convert-subs srt --skip-download -o $ke $URL;
 elif [ $opsub == 3 ];
-then;
+then
 echo "";
 else;
 echo "Pilih Dengan Benar !!";
@@ -161,7 +161,7 @@ echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 7 ] || [ $pilih == 07 ];
-then;
+then
 echo "--------------------------------------------";
 echo "           Format Yang Tersedia";
 echo "--------------------------------------------";
@@ -171,7 +171,7 @@ echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 8 ] || [ $pilih == 08 ];
-then;
+then
 echo "--------------------------------------------";
 echo "           Subtitle Yang Tersedia";
 echo "--------------------------------------------";
@@ -181,7 +181,7 @@ echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 9 ] || [ $pilih == 09 ];
-then;
+then
 echo "--------------------------------------------";
 echo "               Youtube Search";
 echo "--------------------------------------------";
@@ -199,11 +199,11 @@ echo "--------------------------------------------";
 read -p "Pilih : " yts;
 echo " ";
 if [ $yts == 1 ];
-then;
+then
 echo "Downloading Audio...";
 youtube-dl $mp3 "ytsearch:$kunci" -o $ke;
 elif [ $yts == 2 ];
-then;
+then
 echo "--------------------------------------------";
 echo "           Download Video Custom";
 echo "--------------------------------------------";
@@ -224,7 +224,7 @@ echo "Loading....";
 youtube-dl -c -i --hls-prefer-native --add-metadata -f "bestvideo[height<=$Resolusi]+bestaudio/best[height<=$Resolusi]" --merge-output-format $Format "ytsearch:$kunci" -o $ke ;
 
 elif [ $yts == 3 ];
-then;
+then
 echo "--------------------------------------------";
 echo "         Download Video + Subtitle";
 echo "--------------------------------------------";
@@ -253,7 +253,7 @@ echo "Loading....";
 youtube-dl -c -i --write-sub --sub-lang $Sub --convert-subs srt $Emsub --hls-prefer-native --add-metadata -f "bestvideo[height<=$Resolusi]+bestaudio/best[height<=$Resolusi]" --merge-output-format mkv "ytsearch:$kunci" -o $ke;
 
 elif [ $yts == 4 ];
-then;
+then
 echo " ";
 else;
 echo "Pilih Dengan Benar!!";
@@ -262,7 +262,7 @@ echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 10 ];
-then;
+then
 echo "--------------------------------------------";
 echo "              Supported Sites";
 echo "--------------------------------------------";
@@ -272,19 +272,19 @@ xdg-open https://ytdl-org.github.io/youtube-dl/supportedsites.html;
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 11 ];
-then;
+then
 read -p "URL Baru : " URL;
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 12 ];
-then;
+then
 pip install --upgrade youtube-dl;
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 13 ];
-then;
+then
 echo "--------------------------------------------";
 echo "                 INFO TOOLS ";
 echo "--------------------------------------------";
@@ -302,22 +302,22 @@ echo "--------------------------------------------";
 read -p "Pilih: " kontak;
 echo "";
 if [ $kontak == 1 ];
-then;
+then
 xdg-open https://wa.me/62895360702055;
 read -p "[Tekan Enter Untuk Melanjutkan]";
 elif [ $kontak == 2 ];
-then;
+then
 xdg-open https://t.me/alfian_hakim;
 read -p "[Tekan Enter Untuk Melanjutkan]";
 elif [ $kontak == 3 ];
-then;
+then
 echo " ";
 else;
 echo "Pilih Kontak !!";
 fi;
 
 elif [ $pilih == 14 ];
-then;
+then
 echo "--------------------------------------------";
 echo "                 Warna Tema ";
 echo "--------------------------------------------";
@@ -329,14 +329,14 @@ echo "--------------------------------------------";
 read -p "Pilih: " warna;
 echo "";
 if [ $warna == 1 ];
-then;
+then
 echo -e 'tema="\e[92m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
 ytdl.sh;
 elif [ $warna == 2 ];
-then;
+then
 echo -e 'tema="\e[93m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
@@ -347,42 +347,42 @@ echo "";
 read -p "[Restart Program Diperlukan!!]";
 ytdl.sh;
 elif [ $warna == 3 ];
-then;
+then
 echo -e 'tema="\e[94m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
 ytdl.sh;
 elif [ $warna == 4 ];
-then;
+then
 echo -e 'tema="\e[37m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
 ytdl.sh;
 elif [ $warna == 5 ];
-then;
+then
 echo -e 'tema="\e[91m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
 ytdl.sh;
 elif [ $warna == 6 ];
-then;
+then
 echo -e 'tema="\e[96m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
 ytdl.sh;
 elif [ $warna == 7 ];
-then;
+then
 echo -e 'tema="\e[95m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
 ytdl.sh;
 elif [ $warna == 8 ];
-then;
+then
 echo -e 'tema="\e[39m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
@@ -394,7 +394,7 @@ echo "Pilih Warna !!";
 fi;
 
 elif [ $pilih == 15 ] || [ $pilih == x ];
-then;
+then
 exit;
 
 else;
