@@ -34,18 +34,21 @@ echo -e "\e[92m \e[1m"
 echo "============================================"
 echo "            Installing Python"
 echo "============================================"
+sleep 2
 pkg install -y python && pip install --upgrade pip
 
 echo -e "\e[92m \e[1m"
 echo "============================================"
 echo "          Installing Youtube-dl"
 echo "============================================"
+sleep 2
 pip install --upgrade youtube-dl
 
 echo -e "\e[92m \e[1m"
 echo "============================================"
 echo "            Installing FFmpeg"
 echo "============================================"
+sleep 2
 pkg install -y ffmpeg
 
 echo -e "\e[92m \e[1m"
