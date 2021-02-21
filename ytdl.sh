@@ -154,7 +154,7 @@ youtube-dl --write-sub --sub-lang $Sub --convert-subs srt --skip-download -o $ke
 elif [ $opsub == 3 ];
 then
 echo "";
-else;
+else
 echo "Pilih Dengan Benar !!";
 fi;
 echo " ";
@@ -255,7 +255,7 @@ youtube-dl -c -i --write-sub --sub-lang $Sub --convert-subs srt $Emsub --hls-pre
 elif [ $yts == 4 ];
 then
 echo " ";
-else;
+else
 echo "Pilih Dengan Benar!!";
 fi;
 echo " ";
@@ -312,7 +312,7 @@ read -p "[Tekan Enter Untuk Melanjutkan]";
 elif [ $kontak == 3 ];
 then
 echo " ";
-else;
+else
 echo "Pilih Kontak !!";
 fi;
 
@@ -389,7 +389,7 @@ echo "";
 read -p "[Restart Program Diperlukan!!]";
 ytdl.sh;
 
-else;
+else
 echo "Pilih Warna !!";
 fi;
 
@@ -397,7 +397,7 @@ elif [ $pilih == 15 ] || [ $pilih == x ];
 then
 exit;
 
-else;
+else
 echo -e "Pilih Opsi Dengan Benar!!";
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
