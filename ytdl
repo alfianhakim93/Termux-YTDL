@@ -67,15 +67,15 @@ echo "[05] Download Video Custom";
 echo "[06] Download Video + Subtitle";
 echo "[07] Download Subtitle Only";
 echo "[08] Download Sesuai Format";
-echo "[00] Download Thumbnail";
-echo "[09] Cek Subtitle Yang Ada";
-echo "[10] Youtube Search Tools";
-echo "[11] Supported Sites";
-echo "[12] Ganti URL Baru";
-echo "[13] Update Youtube-dl";
-echo "[14] Informasi Tools";
-echo "[15] Ganti Warna Tema";
-echo "[16] Exit Program";
+echo "[09] Download Thumbnail";
+echo "[10] Cek Subtitle Yang Ada";
+echo "[11] Youtube Search Tools";
+echo "[12] Supported Sites";
+echo "[13] Ganti URL Baru";
+echo "[14] Update Youtube-dl";
+echo "[15] Informasi Tools";
+echo "[16] Ganti Warna Tema";
+echo "[17] Exit Program";
 echo "--------------------------------------------";
 read -p "Pilih Opsi [01-15] : " pilih;
 echo " ";
@@ -268,6 +268,8 @@ elif [ $pilih == 9 ] || [ $pilih == 09 ];
 then
 echo "Downloading Thumbnail......";
 youtube-dl "$thumbnail" -o "/data/data/com.termux/files/home/storage/shared/Download/Youtube-DL/Thumbnail".jpg;
+echo "";
+read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 10 ];
 then
