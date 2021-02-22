@@ -4,9 +4,9 @@
 #Language : Shell
 #Dengan Mengubah Credit Tidak Akan Membuat Anda Sebagai CODER YA ANJINGG!!!
 
-pathvideo="/data/data/com.termux/files/home/storage/shared/Youtube-DL/Videos/%(title)s.%(ext)s";
-pathmusic="/data/data/com.termux/files/home/storage/shared/Youtube-DL/Music/%(title)s.%(ext)s";
-pathsub="/data/data/com.termux/files/home/storage/shared/Youtube-DL/Subtitles/%(title)s.%(ext)s";
+pathvideo="/sdcard/Youtube-DL/Videos/%(title)s.%(ext)s";
+pathmusic="/sdcard/Youtube-DL/Music/%(title)s.%(ext)s";
+pathsub="/sdcard/Youtube-DL/Subtitles/%(title)s.%(ext)s";
 mp3="-c -i --embed-thumbnail --hls-prefer-native --add-metadata -f bestaudio/best -x --audio-quality 1 --audio-format mp3";
 best="-c -i --hls-prefer-native --add-metadata --merge-output-format mp4";
 bad="-c -i -f worstvideo+worstaudio --hls-prefer-native --add-metadata --merge-output-format mp4";
@@ -30,8 +30,7 @@ echo "";
 echo "Mengambil Details Video... Tunggu Gan....";
 youtube-dl -j $URL > video.json;
 
-while :;
-do
+info_vid() {
 title=`jq -r '. | .title' video.json | cut -c-32`;
 fulltitle=`jq -r '. | .title' video.json`;
 channel=`jq -r '. | .uploader' video.json | cut -c-32`;
@@ -45,7 +44,10 @@ like=`jq -r '. | .like_count' video.json`;
 dislike=`jq -r '. | .dislike_count' video.json`;
 duration=`printf '%02dh %02dm %02ds\n' $(($count%86400/3600)) $(($count%3600/60)) $(($count%60))`;
 dura=`printf '%02d:%02d\n' $(($count%3600/60)) $(($count%60))`;
+};
 
+while :;
+do
 clear;
 echo -e "$tema";
 echo "============================================";
@@ -155,7 +157,7 @@ audio_url=`head -1 linka.io | tail -1`;
 rm linkv.io linka.io;
 echo "";
 echo "Downloading Video....";
-ffmpeg -ss $start_time -i "$video_url" -ss $start_time -i "$audio_url" -map 0:v -map 1:a -ss 00 -t $trim_time -c:v libx264 -c:a aac "/data/data/com.termux/files/home/storage/shared/Youtube-DL/Videos/Trim-$fulltitle".mkv -v quiet -stats;
+ffmpeg -ss $start_time -i "$video_url" -ss $start_time -i "$audio_url" -map 0:v -map 1:a -ss 00 -t $trim_time -c:v libx264 -c:a aac "/sdcard/Youtube-DL/Videos/Trim-$fulltitle".mkv -v quiet -stats;
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
@@ -269,7 +271,7 @@ read -p "[Tekan Enter Untuk Melanjutkan]";
 elif [ $pilih == 9 ] || [ $pilih == 09 ];
 then
 echo "Downloading Thumbnail......";
-youtube-dl "$thumbnail" -o "/data/data/com.termux/files/home/storage/shared/Youtube-DL/Thumbnails/$fulltitle".jpg;
+youtube-dl "$thumbnail" -o "/sdcard/Youtube-DL/Thumbnails/$fulltitle".jpg;
 echo "";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
@@ -664,6 +666,7 @@ if [[ "$URL" == *"$yt"* ]] || [[ "$URL" == *"$yt2"* ]];
 then
 echo "Mengambil Details Video... Tunggu Gan....";
 youtube-dl -j $URL > video.json;
+info_vid;
 else
 echo "Bukan URL Youtube !!";
 echo "";
