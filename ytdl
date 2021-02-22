@@ -42,6 +42,7 @@ views=`jq -r '. | .view_count' video.json`;
 count=`jq -r '. | .duration' video.json`;
 like=`jq -r '. | .like_count' video.json`;
 dislike=`jq -r '. | .dislike_count' video.json`;
+ch_url=`jq -r '. | .channel_url' video.json`;
 duration=`printf '%02dh %02dm %02ds\n' $(($count%86400/3600)) $(($count%3600/60)) $(($count%60))`;
 dura=`printf '%02d:%02d\n' $(($count%3600/60)) $(($count%60))`;
 };
@@ -73,16 +74,14 @@ echo "[06] Download Video + Subtitle";
 echo "[07] Download Subtitle Only";
 echo "[08] Download Sesuai Format";
 echo "[09] Download Thumbnail";
-echo "[10] Cek Subtitle Yang Ada";
-echo "[11] Youtube Search Tools";
-echo "[12] Supported Sites";
-echo "[13] Ganti URL Youtube Baru";
-echo "[14] Update Youtube-dl";
-echo "[15] Informasi Tools";
-echo "[16] Ganti Warna Tema";
-echo "[17] Exit Program";
+echo "[10] Download Semua Video Dari Channel Ini";
 echo "--------------------------------------------";
-read -p "Pilih Opsi [01-17] : " pilih;
+echo "[11] Cek Subtitle   [15] Update Youtube-DL";
+echo "[12] Youtube Search [16] Informasi Tools";
+echo "[13] Supported Web  [17] Ganti Warna Tema";
+echo "[14] Ganti URL YT   [18] Exit Program";
+echo "--------------------------------------------";
+read -p "Pilih Opsi [01-18] : " pilih;
 echo " ";
 
 if [ $pilih == 1 ] || [ $pilih == 01 ];
@@ -122,11 +121,12 @@ echo "[1] 144p     [3] 360p     [5] 720p";
 echo "[2] 240p     [4] 480p     [6] 1080p";
 echo "--------------------------------------------";
 echo "Misalkan anda ingin crop video dari detik 5";
-echo "sampai menit ke 1 maka input seperti :";
+echo "sampai menit ke 1 maka input seperti:";
 echo "- Start Time : 00:05";
 echo "- End Time   : 01:00";
 echo "--------------------------------------------";
-echo "Total Durasi Video : $dura";
+echo "Judul Video  : $title"
+echo "Total Durasi : $dura";
 echo "--------------------------------------------";
 read -p "Resolusi [1-6] : " preso;
 read -p "Start Time     : " start_time;
@@ -148,7 +148,7 @@ aaa=`printf "%02d" $c`;
 bbb=`printf "%02d" $d`;
 trim_time=`echo $aaa:$bbb`;
 echo "";
-echo "Total Video Dicrop : $trim_time";
+echo "Total Durasi Trim : $trim_time";
 echo "";
 echo "Sedang Proses Memotong Video......";
 youtube-dl -f "bestvideo[height<=$Resolusi]" -g $URL >linkv.io;
@@ -198,7 +198,7 @@ echo "[2] 240p     [4] 480p     [6] 1080p";
 echo "--------------------------------------------";
 echo "Kode Subtitle :";
 echo "  Cek dahulu apakah video memiliki subtitle";
-echo "menggunakan fitur nomor '08'. Jika terdapat";
+echo "menggunakan fitur nomor '11'. Jika terdapat";
 echo "subtitle, cek bahasa apa saja yang tersedia";
 echo "contohnya seperti en,id,kr,my,dan lainnya.";
 echo "--------------------------------------------";
@@ -279,6 +279,38 @@ read -p "[Tekan Enter Untuk Melanjutkan]";
 elif [ $pilih == 10 ];
 then
 echo "--------------------------------------------";
+echo "           Download Semua Video";
+echo "--------------------------------------------";
+echo "Apakah anda yakin ingin medownload semua";
+echo "video dari channel '$channel' ??";
+echo "--------------------------------------------";
+read -p "Konfirmasi (y/n) : " konfir
+echo "";
+if [ $konfir == y ] || [ $konfir == Y ];
+then
+echo "--------------------------------------------";
+echo "              Pilih Resolusi";
+echo "--------------------------------------------";
+echo "[1] 144p     [3] 360p     [5] 720p";
+echo "[2] 240p     [4] 480p     [6] 1080p";
+echo "--------------------------------------------";
+echo "[NOTE] Tekan CTRL + C Untuk Membatalkan";
+echo "--------------------------------------------";
+read -p "Resolusi [1-6] : " preso;
+echo "";
+if [ $preso == 1 ]; then Resolusi="144"; elif [ $preso == 2 ]; then Resolusi="240"; elif [ $preso == 3 ]; then Resolusi="360";
+elif [ $preso == 4 ]; then Resolusi="480"; elif [ $preso == 5 ]; then Resolusi="720"; elif [ $preso == 6 ]; then Resolusi="1080"; fi;
+youtube-dl -c -i --hls-prefer-native --add-metadata -f "bestvideo[height<=$Resolusi]+bestaudio/best[height<=$Resolusi]" --merge-output-format mp4 -o "/sdcard/Youtube-DL/Channel/$channel/%(title)s.%(ext)s" $URL;
+echo "";
+read -p "[Tekan Enter Untuk Melanjutkan]";
+else
+echo "";
+read -p "[Tekan Enter Untuk Melanjutkan]";
+fi;
+
+elif [ $pilih == 11 ];
+then
+echo "--------------------------------------------";
 echo "           Subtitle Yang Tersedia";
 echo "--------------------------------------------";
 echo "Loading....";
@@ -286,7 +318,7 @@ youtube-dl --list-sub $URL;
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
-elif [ $pilih == 11 ];
+elif [ $pilih == 12 ];
 then
 echo "--------------------------------------------";
 echo "               Youtube Search";
@@ -649,7 +681,7 @@ echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 done;
 
-elif [ $pilih == 12 ];
+elif [ $pilih == 13 ];
 then
 echo "--------------------------------------------";
 echo "              Supported Sites";
@@ -659,7 +691,7 @@ echo -e "https://ytdl-org.github.io/youtube-dl/supportedsites.html\n";
 xdg-open https://ytdl-org.github.io/youtube-dl/supportedsites.html;
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
-elif [ $pilih == 13 ];
+elif [ $pilih == 14 ];
 then
 read -p "URL Baru : " URL;
 echo " ";
@@ -675,13 +707,13 @@ fi;
 echo "";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
-elif [ $pilih == 14 ];
+elif [ $pilih == 15 ];
 then
 pip install --upgrade youtube-dl;
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
-elif [ $pilih == 15 ];
+elif [ $pilih == 16 ];
 then
 echo "--------------------------------------------";
 echo "                 INFO TOOLS ";
@@ -714,7 +746,7 @@ else
 echo "Pilih Kontak !!";
 fi;
 
-elif [ $pilih == 16 ];
+elif [ $pilih == 17 ];
 then
 echo "--------------------------------------------";
 echo "                 Warna Tema ";
@@ -791,7 +823,7 @@ else
 echo "Pilih Warna !!";
 fi;
 
-elif [ $pilih == 17 ] || [ $pilih == x ];
+elif [ $pilih == 18 ] || [ $pilih == x ];
 then
 exit;
 
