@@ -53,6 +53,13 @@ pkg install -y ffmpeg
 
 echo -e "\e[92m \e[1m"
 echo "============================================"
+echo "              Installing Jq"
+echo "============================================"
+sleep 2
+pkg install -y jq
+
+echo -e "\e[92m \e[1m"
+echo "============================================"
 echo "        Meminta Izin Akses Storage"
 echo "============================================"
 echo "CATATAN :"
