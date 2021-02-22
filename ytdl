@@ -201,11 +201,11 @@ then
 echo "--------------------------------------------";
 echo "               Youtube Search";
 echo "--------------------------------------------";
-read -p "Kata Kunci : " kunci;
+read -p "Kata Kunci : " search;
 echo "";
 echo "Sedang Mencari, Tunggu Sebentar.....";
 echo "";
-youtube-dl "ytsearch10:$search" --get-id > store.txt;
+youtube-dl "ytsearch5:$search" --get-id > store.txt;
 code1=`head -1 store.txt | tail -1`;
 code2=`head -2 store.txt | tail -1`;
 code3=`head -3 store.txt | tail -1`;
@@ -384,12 +384,14 @@ echo "https://youtube.com/watch?v=$code4";
 elif [ $yts == u5 ];
 then
 echo "https://youtube.com/watch?v=$code5";
+elif [ $yts == x ];
+then
+echo "";
 else
 echo "KODE TIDAK TERSEDIA ATAU SALAH !!!";
 fi;
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
-
 
 elif [ $pilih == 10 ];
 then
