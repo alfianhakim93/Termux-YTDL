@@ -31,6 +31,7 @@ echo "Mengambil Details Video... Tunggu Gan....";
 youtube-dl -j $URL > video.json;
 title=`jq -r '. | .title' video.json | cut -c-32`;
 channel=`jq -r '. | .uploader' video.json | cut -c-32`;
+thumbnail=`jq -r '. | .thumbnail' video.json`;
 yy=`jq -r '. | .upload_date' video.json | cut -c1-4`;
 mm=`jq -r '. | .upload_date' video.json | cut -c5-6`;
 dd=`jq -r '. | .upload_date' video.json | cut -c7-8`;
@@ -61,18 +62,20 @@ echo "--------------------------------------------";
 echo "[01] Download Audio Only (mp3)";
 echo "[02] Download Video Kualitas Terbaik";
 echo "[03] Download Video Kualitas Buruk";
-echo "[04] Download Video Custom";
-echo "[05] Download Video + Subtitle (YT Only)";
-echo "[06] Download Subtitle Only (YT Only)";
-echo "[07] Download Sesuai Format (YT Only)";
-echo "[08] Cek Subtitle Yang Ada (YT Only)";
-echo "[09] Youtube Search Tools";
-echo "[10] Supported Sites";
-echo "[11] Ganti URL Baru";
-echo "[12] Update Youtube-dl";
-echo "[13] Informasi Tools";
-echo "[14] Ganti Warna Tema";
-echo "[15] Exit Program";
+echo "[04] Download Trim/Crop Video";
+echo "[05] Download Video Custom";
+echo "[06] Download Video + Subtitle";
+echo "[07] Download Subtitle Only";
+echo "[08] Download Sesuai Format";
+echo "[00] Download Thumbnail";
+echo "[09] Cek Subtitle Yang Ada";
+echo "[10] Youtube Search Tools";
+echo "[11] Supported Sites";
+echo "[12] Ganti URL Baru";
+echo "[13] Update Youtube-dl";
+echo "[14] Informasi Tools";
+echo "[15] Ganti Warna Tema";
+echo "[16] Exit Program";
 echo "--------------------------------------------";
 read -p "Pilih Opsi [01-15] : " pilih;
 echo " ";
@@ -107,6 +110,56 @@ read -p "[Tekan Enter Untuk Melanjutkan]";
 elif [ $pilih == 4 ] || [ $pilih == 04 ];
 then
 echo "--------------------------------------------";
+echo "            Download Trim Video             ";
+echo "--------------------------------------------";
+echo "Resolusi :";
+echo "[1] 144p     [3] 360p     [5] 720p";
+echo "[2] 240p     [4] 480p     [6] 1080p";
+echo "--------------------------------------------";
+echo "Misalkan anda ingin crop video dari detik 5";
+echo "sampai menit ke 1 maka input seperti :";
+echo "- Start Time : 00:05";
+echo "- End Time   : 01:00";
+echo "--------------------------------------------";
+echo "Total Durasi Video : $dura";
+echo "--------------------------------------------";
+read -p "Resolusi [1-6] : " preso;
+read -p "Start Time     : " start_time;
+read -p "End Time       : " end_time;
+if [ $preso == 1 ]; then Resolusi="144"; elif [ $preso == 2 ]; then Resolusi="240"; elif [ $preso == 3 ]; then Resolusi="360";
+elif [ $preso == 4 ]; then Resolusi="480"; elif [ $preso == 5 ]; then Resolusi="720"; elif [ $preso == 6 ]; then Resolusi="1080"; fi;
+sm=`echo $start_time | cut -c1-2`;
+ss=`echo $start_time | cut -c4-5`;
+em=`echo $end_time | cut -c1-2`;
+es=`echo $end_time | cut -c4-5`;
+a=`expr $sm \* 60`;
+b=`expr $em \* 60`;
+sis=`expr $a + $ss`;
+eis=`expr $b + $es`;
+diff=`expr $eis - $sis`;
+c=`expr $diff / 60`;
+d=`expr $diff % 60`;
+aaa=`printf "%02d" $c`;
+bbb=`printf "%02d" $d`;
+trim_time=`echo $aaa:$bbb`;
+echo "";
+echo "Total Video Dicrop : $trim_time";
+echo "";
+echo "Sedang Proses Memotong Video......";
+youtube-dl -f "bestvideo[height<=$Resolusi]" -g $URL >linkv.io;
+youtube-dl -f 140 -g $URL >linka.io;
+video_url=`head -1 linkv.io | tail -1`;
+audio_url=`head -1 linka.io | tail -1`;
+rm linkv.io linka.io;
+echo "";
+echo "Downloading Video....";
+ffmpeg -ss $start_time -i "$video_url" -ss $start_time -i "$audio_url" -map 0:v -map 1:a -ss 00 -t $trim_time -c:v libx264 -c:a aac "/data/data/com.termux/files/home/storage/shared/Download/Youtube-DL/Videos/Trim-$title".mkv -v quiet -stats;
+echo " ";
+read -p "[Tekan Enter Untuk Melanjutkan]";
+
+elif [ $pilih == 5 ] || [ $pilih == 05 ];
+then
+echo "--------------------------------------------";
 echo "           Download Video Custom";
 echo "--------------------------------------------";
 echo "Resolusi :";
@@ -129,7 +182,7 @@ youtube-dl -c -i --hls-prefer-native --add-metadata -f "bestvideo[height<=$Resol
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
-elif [ $pilih == 5 ]  || [ $pilih == 05 ];
+elif [ $pilih == 6 ]  || [ $pilih == 06 ];
 then
 echo "--------------------------------------------";
 echo "         Download Video + Subtitle";
@@ -162,7 +215,7 @@ youtube-dl -c -i --write-sub --sub-lang $Sub --convert-subs srt $Emsub --hls-pre
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
-elif [ $pilih == 6 ] || [ $pilih == 06 ];
+elif [ $pilih == 7 ] || [ $pilih == 07 ];
 then
 echo "--------------------------------------------";
 echo "          Download Subtitle Only";
@@ -192,7 +245,7 @@ fi;
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
-elif [ $pilih == 7 ] || [ $pilih == 07 ];
+elif [ $pilih == 8 ] || [ $pilih == 08 ];
 then
 echo "--------------------------------------------";
 echo "           Format Yang Tersedia";
@@ -211,7 +264,12 @@ echo "Mendownload ......";
 youtube-dl -c -i --hls-prefer-native --add-metadata -f $kdv+$kda --merge-output-format mp4 -o $pathvideo $URL;
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
-elif [ $pilih == 8 ] || [ $pilih == 08 ];
+elif [ $pilih == 9 ] || [ $pilih == 09 ];
+then
+echo "Downloading Thumbnail......";
+youtube-dl "$thumbnail" -o "/data/data/com.termux/files/home/storage/shared/Download/Youtube-DL/Thumbnail".jpg;
+
+elif [ $pilih == 10 ];
 then
 echo "--------------------------------------------";
 echo "           Subtitle Yang Tersedia";
@@ -221,7 +279,7 @@ youtube-dl --list-sub $URL;
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
-elif [ $pilih == 9 ] || [ $pilih == 09 ];
+elif [ $pilih == 11 ];
 then
 echo "--------------------------------------------";
 echo "               Youtube Search";
@@ -584,7 +642,7 @@ echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 done;
 
-elif [ $pilih == 10 ];
+elif [ $pilih == 12 ];
 then
 echo "--------------------------------------------";
 echo "              Supported Sites";
@@ -594,19 +652,27 @@ echo -e "https://ytdl-org.github.io/youtube-dl/supportedsites.html\n";
 xdg-open https://ytdl-org.github.io/youtube-dl/supportedsites.html;
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
-elif [ $pilih == 11 ];
+elif [ $pilih == 13 ];
 then
 read -p "URL Baru : " URL;
 echo " ";
+if [[ "$URL" == *"$yt"* ]] || [[ "$URL" == *"$yt2"* ]];
+then
+echo "Mengambil Details Video... Tunggu Gan....";
+youtube-dl -j $URL > video.json;
+else
+echo "URL bukan Youtube !!";
+echo "";
+fi;
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
-elif [ $pilih == 12 ];
+elif [ $pilih == 14 ];
 then
 pip install --upgrade youtube-dl;
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
-elif [ $pilih == 13 ];
+elif [ $pilih == 15 ];
 then
 echo "--------------------------------------------";
 echo "                 INFO TOOLS ";
@@ -639,7 +705,7 @@ else
 echo "Pilih Kontak !!";
 fi;
 
-elif [ $pilih == 14 ];
+elif [ $pilih == 16 ];
 then
 echo "--------------------------------------------";
 echo "                 Warna Tema ";
@@ -716,7 +782,7 @@ else
 echo "Pilih Warna !!";
 fi;
 
-elif [ $pilih == 15 ] || [ $pilih == x ];
+elif [ $pilih == 17 ] || [ $pilih == x ];
 then
 exit;
 
