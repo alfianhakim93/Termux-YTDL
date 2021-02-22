@@ -28,7 +28,7 @@ then
 
 echo "";
 echo "Mengambil Details Video... Tunggu Gan....";
-youtube-dl -j $url > video.json;
+youtube-dl -j $URL > video.json;
 title=`jq -r '. | .title' video.json | cut -c-32`;
 channel=`jq -r '. | .uploader' video.json | cut -c-32`;
 yy=`jq -r '. | .upload_date' video.json | cut -c1-4`;
@@ -36,6 +36,9 @@ mm=`jq -r '. | .upload_date' video.json | cut -c5-6`;
 dd=`jq -r '. | .upload_date' video.json | cut -c7-8`;
 views=`jq -r '. | .view_count' video.json`;
 count=`jq -r '. | .duration' video.json`;
+like=`jq -r '. | .like_count' video.json`;
+dislike=`jq -r '. | .dislike_count' video.json`;
+duration=`printf '%02dh %02dm %02ds\n' $(($count%86400/3600)) $(($count%3600/60)) $(($count%60))`;
 dura=`printf '%02d:%02d\n' $(($count%3600/60)) $(($count%60))`;
 
 while :;
@@ -51,6 +54,7 @@ echo "Channel  : $channel";
 echo "Durasi   : $duration";
 echo "Uploaded : $dd-$mm-$yy";
 echo "Views    : $views";
+echo "Like/Dis : $like Likes / $dislike Dislike"
 echo "--------------------------------------------";
 echo "                Opsi Download";
 echo "--------------------------------------------";
