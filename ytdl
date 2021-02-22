@@ -223,6 +223,8 @@ res4=`youtube-dl https://youtube.com/watch?v=$code4 --get-title`;
 echo "Hasil Search Ketemu (5/5)..";
 res5=`youtube-dl https://youtube.com/watch?v=$code5 --get-title`;
 clear;
+while :;
+do
 echo "";
 echo "--------------------------------------------";
 echo "           Hasil Youtube Search";
@@ -238,9 +240,10 @@ echo "[-] t : Tonton Video Di Youtube";
 echo "[-] a : Download Audio (mp3)";
 echo "[-] c : Download Video Custom";
 echo "[-] u : Menampilkan URL Video";
-echo "[-] x : Kembali ke Menu";
+echo "[-] x : Keluar";
 echo "--------------------------------------------";
-echo "[*] Contoh : t1,a2,c3,s4,a5"
+echo "[*] Pilih Opsi + Nomor Video";
+echo "[*] Contoh : t1,a2,c3,s4,a5";
 echo "--------------------------------------------";
 read -p "Pilih Opsi : " yts;
 echo "";
@@ -386,12 +389,13 @@ then
 echo "https://youtube.com/watch?v=$code5";
 elif [ $yts == x ];
 then
-echo "";
+exit;
 else
 echo "KODE TIDAK TERSEDIA ATAU SALAH !!!";
 fi;
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
+done;
 
 elif [ $pilih == 10 ];
 then
