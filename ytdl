@@ -27,7 +27,7 @@ if [[ "$URL" == *"$yt"* ]] || [[ "$URL" == *"$yt2"* ]];
 then
 
 echo "";
-echo "Mengambil Details Video... Tunggu Gan....";
+echo "Mengambil Details Video....";
 youtube-dl -j $URL > video.json;
 
 info_vid() {
@@ -694,15 +694,15 @@ read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 14 ];
 then
-read -p "URL Baru : " URL;
+read -p "URL Baru : " $ubaru;
 echo " ";
 if [[ "$URL" == *"$yt"* ]] || [[ "$URL" == *"$yt2"* ]];
 then
 echo "Mengambil Details Video... Tunggu Gan....";
-youtube-dl -j $URL > video.json;
+youtube-dl -j $ubaru > video.json;
 info_vid;
 else
-echo "Bukan URL Youtube !!";
+echo "Tools Yang Ini Hanya Untuk Youtube Link!!";
 echo "";
 fi;
 echo "";
@@ -1263,13 +1263,13 @@ read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 6 ] || [ $pilih == 06 ];
 then
-read -p "URL Baru : " URL;
+read -p "URL Baru : " ubaru;
 echo " ";
 if [[ "$URL" == *"$yt"* ]] || [[ "$URL" == *"$yt2"* ]];
 then
 echo "Youtube URL Ga Support Ditools Yang Ini !!";
 else
-URL=$URL;
+URL=$ubaru;
 echo "";
 fi;
 echo "";
