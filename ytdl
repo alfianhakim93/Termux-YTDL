@@ -29,7 +29,11 @@ then
 echo "";
 echo "Mengambil Details Video... Tunggu Gan....";
 youtube-dl -j $URL > video.json;
+
+while :;
+do
 title=`jq -r '. | .title' video.json | cut -c-32`;
+fulltitle=`jq -r '. | .title' video.json`;
 channel=`jq -r '. | .uploader' video.json | cut -c-32`;
 thumbnail=`jq -r '. | .thumbnail' video.json`;
 yy=`jq -r '. | .upload_date' video.json | cut -c1-4`;
@@ -42,8 +46,6 @@ dislike=`jq -r '. | .dislike_count' video.json`;
 duration=`printf '%02dh %02dm %02ds\n' $(($count%86400/3600)) $(($count%3600/60)) $(($count%60))`;
 dura=`printf '%02d:%02d\n' $(($count%3600/60)) $(($count%60))`;
 
-while :;
-do
 clear;
 echo -e "$tema";
 echo "============================================";
@@ -71,7 +73,7 @@ echo "[09] Download Thumbnail";
 echo "[10] Cek Subtitle Yang Ada";
 echo "[11] Youtube Search Tools";
 echo "[12] Supported Sites";
-echo "[13] Ganti URL Baru";
+echo "[13] Ganti URL Youtube Baru";
 echo "[14] Update Youtube-dl";
 echo "[15] Informasi Tools";
 echo "[16] Ganti Warna Tema";
@@ -153,7 +155,7 @@ audio_url=`head -1 linka.io | tail -1`;
 rm linkv.io linka.io;
 echo "";
 echo "Downloading Video....";
-ffmpeg -ss $start_time -i "$video_url" -ss $start_time -i "$audio_url" -map 0:v -map 1:a -ss 00 -t $trim_time -c:v libx264 -c:a aac "/data/data/com.termux/files/home/storage/shared/Youtube-DL/Videos/Trim-$title".mkv -v quiet -stats;
+ffmpeg -ss $start_time -i "$video_url" -ss $start_time -i "$audio_url" -map 0:v -map 1:a -ss 00 -t $trim_time -c:v libx264 -c:a aac "/data/data/com.termux/files/home/storage/shared/Youtube-DL/Videos/Trim-$fulltitle".mkv -v quiet -stats;
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
@@ -267,7 +269,7 @@ read -p "[Tekan Enter Untuk Melanjutkan]";
 elif [ $pilih == 9 ] || [ $pilih == 09 ];
 then
 echo "Downloading Thumbnail......";
-youtube-dl "$thumbnail" -o "/data/data/com.termux/files/home/storage/shared/Youtube-DL/Thumbnail/$title".jpg;
+youtube-dl "$thumbnail" -o "/data/data/com.termux/files/home/storage/shared/Youtube-DL/Thumbnails/$fulltitle".jpg;
 echo "";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
@@ -663,9 +665,10 @@ then
 echo "Mengambil Details Video... Tunggu Gan....";
 youtube-dl -j $URL > video.json;
 else
-echo "URL bukan Youtube !!";
+echo "Bukan URL Youtube !!";
 echo "";
 fi;
+echo "";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 14 ];
