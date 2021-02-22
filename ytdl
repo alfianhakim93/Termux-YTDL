@@ -300,7 +300,7 @@ read -p "Resolusi [1-6] : " preso;
 echo "";
 if [ $preso == 1 ]; then Resolusi="144"; elif [ $preso == 2 ]; then Resolusi="240"; elif [ $preso == 3 ]; then Resolusi="360";
 elif [ $preso == 4 ]; then Resolusi="480"; elif [ $preso == 5 ]; then Resolusi="720"; elif [ $preso == 6 ]; then Resolusi="1080"; fi;
-youtube-dl -c -i --hls-prefer-native --add-metadata -f "bestvideo[height<=$Resolusi]+bestaudio/best[height<=$Resolusi]" --merge-output-format mp4 -o "/sdcard/Youtube-DL/Channel/$channel/%(title)s.%(ext)s" $URL;
+youtube-dl -c -i --hls-prefer-native --add-metadata -f "bestvideo[height<=$Resolusi]+bestaudio/best[height<=$Resolusi]" --merge-output-format mp4 -o "/sdcard/Youtube-DL/Channel/$channel/%(title)s.%(ext)s" $ch_url;
 echo "";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 else
