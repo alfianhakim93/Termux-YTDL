@@ -4,9 +4,9 @@
 #Language : Shell
 #Dengan Mengubah Credit Tidak Akan Membuat Anda Sebagai CODER YA ANJINGG!!!
 
-pathvideo="/data/data/com.termux/files/home/storage/shared/Download/Youtube-DL/Videos/%(title)s.%(ext)s";
-pathmusic="/data/data/com.termux/files/home/storage/shared/Download/Youtube-DL/Music/%(title)s.%(ext)s";
-pathsub="/data/data/com.termux/files/home/storage/shared/Download/Youtube-DL/Subtitles/%(title)s.%(ext)s";
+pathvideo="/data/data/com.termux/files/home/storage/shared/Youtube-DL/Videos/%(title)s.%(ext)s";
+pathmusic="/data/data/com.termux/files/home/storage/shared/Youtube-DL/Music/%(title)s.%(ext)s";
+pathsub="/data/data/com.termux/files/home/storage/shared/Youtube-DL/Subtitles/%(title)s.%(ext)s";
 mp3="-c -i --embed-thumbnail --hls-prefer-native --add-metadata -f bestaudio/best -x --audio-quality 1 --audio-format mp3";
 best="-c -i --hls-prefer-native --add-metadata --merge-output-format mp4";
 bad="-c -i -f worstvideo+worstaudio --hls-prefer-native --add-metadata --merge-output-format mp4";
@@ -77,7 +77,7 @@ echo "[15] Informasi Tools";
 echo "[16] Ganti Warna Tema";
 echo "[17] Exit Program";
 echo "--------------------------------------------";
-read -p "Pilih Opsi [01-15] : " pilih;
+read -p "Pilih Opsi [01-17] : " pilih;
 echo " ";
 
 if [ $pilih == 1 ] || [ $pilih == 01 ];
@@ -153,7 +153,7 @@ audio_url=`head -1 linka.io | tail -1`;
 rm linkv.io linka.io;
 echo "";
 echo "Downloading Video....";
-ffmpeg -ss $start_time -i "$video_url" -ss $start_time -i "$audio_url" -map 0:v -map 1:a -ss 00 -t $trim_time -c:v libx264 -c:a aac "/data/data/com.termux/files/home/storage/shared/Download/Youtube-DL/Videos/Trim-$title".mkv -v quiet -stats;
+ffmpeg -ss $start_time -i "$video_url" -ss $start_time -i "$audio_url" -map 0:v -map 1:a -ss 00 -t $trim_time -c:v libx264 -c:a aac "/data/data/com.termux/files/home/storage/shared/Youtube-DL/Videos/Trim-$title".mkv -v quiet -stats;
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
@@ -267,7 +267,7 @@ read -p "[Tekan Enter Untuk Melanjutkan]";
 elif [ $pilih == 9 ] || [ $pilih == 09 ];
 then
 echo "Downloading Thumbnail......";
-youtube-dl "$thumbnail" -o "/data/data/com.termux/files/home/storage/shared/Download/Youtube-DL/Thumbnail".jpg;
+youtube-dl "$thumbnail" -o "/data/data/com.termux/files/home/storage/shared/Youtube-DL/Thumbnail/$title".jpg;
 echo "";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
@@ -683,7 +683,7 @@ echo "[*] Project  : Termux-YTDL";
 echo "[*] Coder    : Alfian Hakim";
 echo "[*] Language : Shell";
 echo "[*] Github   : github.com/alfianhakim93";
-echo "[*] Path     : Internal/Download/Youtube-DL";
+echo "[*] Path     : Internal/Youtube-DL";
 echo "--------------------------------------------";
 echo "[*] Kontak :";
 echo "[1] Chat Whatsapp";
