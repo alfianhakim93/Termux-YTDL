@@ -765,60 +765,60 @@ echo -e 'tema="\e[92m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 elif [ $warna == 2 ];
 then
 echo -e 'tema="\e[93m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 elif [ $warna == 3 ];
 then
 echo -e 'tema="\e[94m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 elif [ $warna == 4 ];
 then
 echo -e 'tema="\e[37m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 elif [ $warna == 5 ];
 then
 echo -e 'tema="\e[91m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 elif [ $warna == 6 ];
 then
 echo -e 'tema="\e[96m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 elif [ $warna == 7 ];
 then
 echo -e 'tema="\e[95m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 elif [ $warna == 8 ];
 then
 echo -e 'tema="\e[39m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 
 else
 echo "Pilih Warna !!";
@@ -1332,60 +1332,60 @@ echo -e 'tema="\e[92m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 elif [ $warna == 2 ];
 then
 echo -e 'tema="\e[93m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 elif [ $warna == 3 ];
 then
 echo -e 'tema="\e[94m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 elif [ $warna == 4 ];
 then
 echo -e 'tema="\e[37m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 elif [ $warna == 5 ];
 then
 echo -e 'tema="\e[91m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 elif [ $warna == 6 ];
 then
 echo -e 'tema="\e[96m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 elif [ $warna == 7 ];
 then
 echo -e 'tema="\e[95m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 elif [ $warna == 8 ];
 then
 echo -e 'tema="\e[39m \e[1m"' > $pathtema;
 echo "Warna Tema Berhasil Diubah";
 echo "";
 read -p "[Restart Program Diperlukan!!]";
-ytdl.sh;
+ytdl;
 
 else
 echo "Pilih Warna !!";
