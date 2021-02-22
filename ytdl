@@ -833,7 +833,6 @@ echo -e "Pilih Opsi Dengan Benar!!";
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 fi;
-
 done;
 
 else
@@ -1396,11 +1395,11 @@ elif [ $pilih == 10 ] || [ $pilih == x ];
 then
 exit;
 
-
 else
 echo -e "Pilih Opsi Dengan Benar!!";
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 fi;
+done;
 
 fi;
