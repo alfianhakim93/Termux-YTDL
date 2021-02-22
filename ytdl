@@ -21,6 +21,23 @@ echo "         GUNAKAN TOOLS DENGAN BIJAK";
 echo "============================================";
 read -p "Masukan URL : " URL;
 
+yt="youtu";
+yt2="youtube";
+if [[ "$URL" == *"$yt"* ]] || [[ "$URL" == *"$yt2"* ]];
+then
+
+echo "";
+echo "Mengambil Details Video... Tunggu Gan....";
+youtube-dl -j $url > video.json;
+title=`jq -r '. | .title' video.json | cut -c-32`;
+channel=`jq -r '. | .uploader' video.json | cut -c-32`;
+yy=`jq -r '. | .upload_date' video.json | cut -c1-4`;
+mm=`jq -r '. | .upload_date' video.json | cut -c5-6`;
+dd=`jq -r '. | .upload_date' video.json | cut -c7-8`;
+views=`jq -r '. | .view_count' video.json`;
+count=`jq -r '. | .duration' video.json`;
+dura=`printf '%02d:%02d\n' $(($count%3600/60)) $(($count%60))`;
+
 while :;
 do
 clear;
@@ -29,7 +46,11 @@ echo "============================================";
 echo "              YOUTUBE-DL TOOLS";
 echo "                  By Alfian";
 echo "============================================";
-echo "URL: $URL";
+echo "Title    : $title";
+echo "Channel  : $channel";
+echo "Durasi   : $duration";
+echo "Uploaded : $dd-$mm-$yy";
+echo "Views    : $views";
 echo "--------------------------------------------";
 echo "                Opsi Download";
 echo "--------------------------------------------";
@@ -702,3 +723,7 @@ read -p "[Tekan Enter Untuk Melanjutkan]";
 fi;
 
 done;
+
+else
+exit;
+fi;
