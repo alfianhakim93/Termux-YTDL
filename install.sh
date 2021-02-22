@@ -77,6 +77,11 @@ fi
 
 mkdir bin
 mkdir -p /data/data/com.termux/files/bin/ytdl
+mkdir /sdcard/Youtube-DL/Channel
+mkdir /sdcard/Youtube-DL/Music
+mkdir /sdcard/Youtube-DL/Subtitles
+mkdir /sdcard/Youtube-DL/Thumbnails
+mkdir /sdcard/Youtube-DL/Videos
 
 echo -e 'tema="\e[96m \e[1m"' > /data/data/com.termux/files/bin/ytdl/tema.txt
 echo -e '\nPATH="$PATH:/data/data/com.termux/files/home/Termux-YTDL"' >> /data/data/com.termux/files/usr/etc/bash.bashrc
