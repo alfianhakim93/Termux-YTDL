@@ -45,6 +45,7 @@ dislike=`jq -r '. | .dislike_count' video.json`;
 duration=`printf '%02dh %02dm %02ds\n' $(($count%86400/3600)) $(($count%3600/60)) $(($count%60))`;
 dura=`printf '%02d:%02d\n' $(($count%3600/60)) $(($count%60))`;
 };
+info_vid;
 
 while :;
 do
