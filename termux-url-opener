@@ -19,9 +19,10 @@ yt="youtu";
 yt2="youtube";
 if [[ "$URL" == *"$yt"* ]] || [[ "$URL" == *"$yt2"* ]];
 then
-
+echo -e "$tema";
 echo "";
-echo "Mengambil Details Video... Tunggu Gan....";
+echo "";
+echo "Mengambil Details Video...";
 youtube-dl -j $URL > video.json;
 
 info_vid() {
