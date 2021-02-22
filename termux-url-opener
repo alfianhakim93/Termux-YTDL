@@ -20,8 +20,10 @@ yt2="youtube";
 if [[ "$URL" == *"$yt"* ]] || [[ "$URL" == *"$yt2"* ]];
 then
 echo -e "$tema";
-echo "";
-echo "";
+echo "============================================";
+echo "               SELAMAT DATANG";
+echo "         GUNAKAN TOOLS DENGAN BIJAK";
+echo "============================================";
 echo "Mengambil Details Video....";
 youtube-dl -j $URL > video.json;
 
