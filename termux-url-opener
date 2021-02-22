@@ -693,7 +693,7 @@ elif [ $pilih == 14 ];
 then
 read -p "URL Baru : " $ubaru;
 echo " ";
-if [[ "$URL" == *"$yt"* ]] || [[ "$URL" == *"$yt2"* ]];
+if [[ "$ubaru" == *"$yt"* ]] || [[ "$ubaru" == *"$yt2"* ]];
 then
 echo "Mengambil Details Video... Tunggu Gan....";
 youtube-dl -j $ubaru > video.json;
@@ -1262,7 +1262,7 @@ elif [ $pilih == 6 ] || [ $pilih == 06 ];
 then
 read -p "URL Baru : " ubaru;
 echo " ";
-if [[ "$URL" == *"$yt"* ]] || [[ "$URL" == *"$yt2"* ]];
+if [[ "$ubaru" == *"$yt"* ]] || [[ "$ubaru" == *"$yt2"* ]];
 then
 echo "Youtube URL Ga Support Ditools Yang Ini !!";
 else
