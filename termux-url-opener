@@ -192,7 +192,7 @@ audio_url=`head -1 linka.io | tail -1`;
 rm linkv.io linka.io;
 echo "";
 echo "Downloading Video....";
-ffmpeg -ss $start_time -i "$video_url" -ss $start_time -i "$audio_url" -map 0:v -map 1:a -ss 00 -t $trim_time -c:v libx264 -c:a aac "/sdcard/Youtube-DL/Videos/Trim-$fulltitle".mkv -v quiet -stats;
+ffmpeg -ss $start_time -i "$video_url" -ss $start_time -i "$audio_url" -map 0:v -map 1:a -ss 00 -t $trim_time -c:v libx264 -b:v 1000K -maxrate 1000K -bufsize 500K -c:a aac "/sdcard/Youtube-DL/Videos/Trim-$fulltitle".mkv -v quiet -stats;
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
