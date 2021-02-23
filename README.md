@@ -19,11 +19,11 @@ $ git clone https://github.com/alfianhakim93/Termux-YTDL/
 $ bash Termux-YTDL/install.sh
 ```
 <br>
-<h3> Cara Menggunakan (2 Cara) </h3>
-1. Ketik 'ytdl' pada Termux.
+<h4> Cara Menggunakan (2 Cara) : </h4>
+1. Ketik 'ytdl' pada Termux.<br>
 2. Langsung Share/Bagikan Link Ke Termux.
 <br>
-#### Features:
+<h4> Features: </h4>
 - Dapat Mendownload Mp3
 - Terdapat Fitur Custom Download
 - Dapat Memilih Kualitas Unduhan
