@@ -7,11 +7,11 @@ Script ini berfungsi untuk mendownload video dan audio dari YouTube dan dari Rib
 - List Situs Selengkapnya ada di : <br>
 https://ytdl-org.github.io/youtube-dl/supportedsites.html <br>
 
-### Me:
+#### Me:
 Author👨‍💻: https://github.com/alfianhakim93/ <br>
 Telegram : https://t.me/alfian_hakim <br>
 
-### Instalasi dan Penggunaan :
+#### Instalasi dan Penggunaan :
 - Install : <br>
 ```java
 $ pkg update && pkg upgrade
@@ -21,10 +21,12 @@ $ bash Termux-YTDL/install.sh
 ```
 <br>
 - Penggunaan (2 Cara) : <br>
-1.Ketik 'ytdl' lalu enter untuk Run Script. <br>
-2.Share/bagikan link langsung ke Termux. <br>
-
-### Features:
+```java
+1. Ketik 'ytdl' pada Termux.
+2. Langsung Share/Bagikan Link Ke Termux.
+```
+<br>
+#### Features:
 - Dapat Mendownload Mp3
 - Terdapat Fitur Custom Download
 - Dapat Memilih Kualitas Unduhan
