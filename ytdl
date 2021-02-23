@@ -732,7 +732,7 @@ elif [ $pilih == 14 ];
 then
 read -p "URL Baru : " $ubaru;
 echo " ";
-if [[ "$ubaru" == *"$yt"* ]] || [[ "$ubaru" == *"$yt2"* ]];
+if [[ "$ubaru" == *"youtu"* ]] || [[ "$ubaru" == *"youtube"* ]] && [[ "$ubaru" != *"playlist"* ]];
 then
 echo "Mengambil Details Video... Tunggu Gan....";
 youtube-dl -j $ubaru > video.json;
@@ -890,10 +890,10 @@ echo "--------------------------------------------";
 echo "[01] Download Audio Only (mp3)";
 echo "[02] Download Video Kualitas Terbaik";
 echo "[03] Download Video Kualitas Buruk";
-echo "[04] Youtube Search Tools";
-echo "[05] Supported Sites";
-echo "[06] Ganti URL Baru";
-echo "[07] Update Youtube-DL";
+echo "[04] Download Video Custom";
+echo "[05] Youtube Search Tools";
+echo "[06] Supported Sites";
+echo "[07] Ganti URL Baru";
 echo "[08] Informasi Tools";
 echo "[09] Ganti Warna Tema";
 echo "[10] Exit Program";
@@ -928,6 +928,26 @@ echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 4 ] || [ $pilih == 04 ];
+then
+echo "--------------------------------------------";
+echo "           Download Video Custom";
+echo "--------------------------------------------";
+echo "Resolusi :";
+echo "[1] 144p     [3] 360p     [5] 720p";
+echo "[2] 240p     [4] 480p     [6] 1080p";
+echo "--------------------------------------------";
+echo "[NOTE] Tekan CTRL + C Untuk Membatalkan";
+echo "--------------------------------------------";
+read -p "Pilih Resolusi [1-6] : " preso;
+echo "";
+if [ $preso == 1 ]; then Resolusi="144"; elif [ $preso == 2 ]; then Resolusi="240"; elif [ $preso == 3 ]; then Resolusi="360";
+elif [ $preso == 4 ]; then Resolusi="480"; elif [ $preso == 5 ]; then Resolusi="720"; elif [ $preso == 6 ]; then Resolusi="1080"; fi;
+echo "Downloading....";
+youtube-dl -c -i --hls-prefer-native --add-metadata -f "bestvideo[height<=$Resolusi]+bestaudio/best[height<=$Resolusi]" --merge-output-format mp4 -o $pathvideo $URL;
+echo " ";
+read -p "[Tekan Enter Untuk Melanjutkan]";
+
+elif [ $pilih == 5 ] || [ $pilih == 05 ];
 then
 echo "--------------------------------------------";
 echo "               Youtube Search";
@@ -1290,7 +1310,7 @@ echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 done;
 
-elif [ $pilih == 5 ] || [ $pilih == 05 ];
+elif [ $pilih == 6 ] || [ $pilih == 06 ];
 then
 echo "--------------------------------------------";
 echo "              Supported Sites";
@@ -1300,7 +1320,7 @@ echo -e "https://ytdl-org.github.io/youtube-dl/supportedsites.html\n";
 xdg-open https://ytdl-org.github.io/youtube-dl/supportedsites.html;
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
-elif [ $pilih == 6 ] || [ $pilih == 06 ];
+elif [ $pilih == 7 ] || [ $pilih == 07 ];
 then
 read -p "URL Baru : " ubaru;
 echo " ";
@@ -1312,12 +1332,6 @@ URL=$ubaru;
 echo "";
 fi;
 echo "";
-read -p "[Tekan Enter Untuk Melanjutkan]";
-
-elif [ $pilih == 7 ] || [ $pilih == 07 ];
-then
-pip install --upgrade youtube-dl;
-echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
 elif [ $pilih == 8 ] || [ $pilih == 08 ];
@@ -1445,8 +1459,8 @@ elif [[ "$URL" == *"youtu"* ]] || [[ "$URL" == *"youtube"* ]] && [[ "$URL" == *"
 then
 
 echo "";
-echo "Mengambil Details Playlist, Tunggu.....";
-youtube-dl --no-warnings -i -j $URL > playlist.json;
+echo "Mengambil Details Playlist, Tunggu Bentar.....";
+youtube-dl --no-warnings -q -i -j $URL > playlist.json;
 
 info_pl(){
 judul=`jq -r '. | .playlist_title' playlist.json | cut -c-32`;
@@ -1487,7 +1501,7 @@ echo "";
 if [ $pilih == 1 ];
 then
 echo "";
-echo "Downloading Audio .....";
+echo "Downloading All Audio .....";
 youtube-dl $mp3 -o "/sdcard/Youtube-DL/Playlist/$title/Music%(title)s.%(ext)s" $URL;
 echo "";
 read -p "[Tekan Enter Untuk Melanjutkan]";
@@ -1495,8 +1509,9 @@ read -p "[Tekan Enter Untuk Melanjutkan]";
 elif [ $pilih == 2 ];
 then
 echo "--------------------------------------------";
-echo "Download Video Playlist";
-echo "Silahkan Masukan Resolusi Yang Diingingkan";
+echo "          Download Video Playlist";
+echo "--------------------------------------------";
+echo "Silahkan Masukan Resolusi Yang Diinginkan";
 echo "Contoh : 144,240,480,720,1080";
 echo "--------------------------------------------";
 read -p "Resolusi : " Resolusi;
@@ -1606,6 +1621,8 @@ echo "";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 fi;
 done;
+
+
 
 elif [[ "$URL" == *"/"* ]] && [[ "$URL" != *"http"* ]];
 then
