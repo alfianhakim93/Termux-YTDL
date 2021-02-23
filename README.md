@@ -20,7 +20,7 @@ $ git clone https://github.com/alfianhakim93/Termux-YTDL/
 $ bash Termux-YTDL/install.sh
 ```
 
-<h3> Cara Menggunakan (2 Cara) : </h3>
+<h3> Cara Menggunakan : </h3>
 1. Ketik 'ytdl' pada Termux.<br>
 2. Langsung Share/Bagikan Link Ke Termux.
 <br>
