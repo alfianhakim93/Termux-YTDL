@@ -22,8 +22,8 @@ $ bash Termux-YTDL/install.sh
 <br>
 - Penggunaan (2 Cara) : <br>
 ```java
-test
-test
+$ test
+$ test
 ```
 <br>
 #### Features:
