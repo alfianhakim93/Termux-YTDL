@@ -1502,7 +1502,7 @@ if [ $pilih == 1 ];
 then
 echo "";
 echo "Downloading All Audio .....";
-youtube-dl $mp3 -o "/sdcard/Youtube-DL/Playlist/$title/Music%(title)s.%(ext)s" $URL;
+youtube-dl $mp3 -o "/sdcard/Youtube-DL/Playlist/$title/Music/%(title)s.%(ext)s" $URL;
 echo "";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
@@ -1517,7 +1517,7 @@ echo "--------------------------------------------";
 read -p "Resolusi : " Resolusi;
 echo "";
 echo "Downloading....";
-youtube-dl -c -i --hls-prefer-native --add-metadata -f "bestvideo[height<=$Resolusi]+140" --merge-output-format mp4 -o "/sdcard/Youtube-DL/Playlist/$title/Videos%(title)s.%(ext)s" $URL ;
+youtube-dl -c -i --hls-prefer-native --add-metadata -f "bestvideo[height<=$Resolusi]+140" --merge-output-format mp4 -o "/sdcard/Youtube-DL/Playlist/$title/Videos/%(title)s.%(ext)s" $URL ;
 echo "";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
@@ -1542,7 +1542,7 @@ echo "--------------------------------------------";
 read -p "Index : " index;
 echo "";
 echo "Downloading....";
-youtube-dl $mp3 --playlist-items $index -o "/sdcard/Youtube-DL/Playlist/$title/Music%(title)s.%(ext)s" $URL;
+youtube-dl $mp3 --playlist-items $index -o "/sdcard/Youtube-DL/Playlist/$title/Music/%(title)s.%(ext)s" $URL;
 elif [ $auindex == 2 ];
 then
 echo "--------------------------------------------";
@@ -1554,7 +1554,7 @@ read -p "Dari   : " dari;
 read -p "Sampai : " sampai;
 echo "";
 echo "Downloading....";
-youtube-dl $mp3 --playlist-start $dari --playlist-end $sampai -o "/sdcard/Youtube-DL/Playlist/$title/Music%(title)s.%(ext)s" $URL;
+youtube-dl $mp3 --playlist-start $dari --playlist-end $sampai -o "/sdcard/Youtube-DL/Playlist/$title/Music/%(title)s.%(ext)s" $URL;
 elif [ $auindex == 3 ];
 then
 echo "";
@@ -1588,7 +1588,7 @@ read -p "Resolusi : " Resolusi;
 read -p "Index    : " index;
 echo "";
 echo "Downloading....";
-youtube-dl -c -i --hls-prefer-native --add-metadata --playlist-items $index -f "bestvideo[height<=$Resolusi]+140" --merge-output-format mp4 -o "/sdcard/Youtube-DL/Playlist/$title/Videos%(title)s.%(ext)s" $URL ;
+youtube-dl -c -i --hls-prefer-native --add-metadata --playlist-items $index -f "bestvideo[height<=$Resolusi]+140" --merge-output-format mp4 -o "/sdcard/Youtube-DL/Playlist/$title/Videos/%(title)s.%(ext)s" $URL ;
 elif [ $auindex == 2 ];
 then
 echo "--------------------------------------------";
@@ -1603,7 +1603,7 @@ read -p "Dari     : " dari;
 read -p "Sampai   : " sampai;
 echo "";
 echo "Downloading....";
-youtube-dl -c -i --hls-prefer-native --add-metadata --playlist-start $dari --playlist-end $sampai -f "bestvideo[height<=$Resolusi]+140" --merge-output-format mp4 -o "/sdcard/Youtube-DL/Playlist/$title/Videos%(title)s.%(ext)s" $URL ;
+youtube-dl -c -i --hls-prefer-native --add-metadata --playlist-start $dari --playlist-end $sampai -f "bestvideo[height<=$Resolusi]+140" --merge-output-format mp4 -o "/sdcard/Youtube-DL/Playlist/$title/Videos/%(title)s.%(ext)s" $URL ;
 elif [ $auindex == 3 ];
 then
 echo "";
