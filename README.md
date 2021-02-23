@@ -8,7 +8,7 @@ Script ini berfungsi untuk mendownload video dan audio dari YouTube dan dari Rib
 https://ytdl-org.github.io/youtube-dl/supportedsites.html <br>
 
 <h4> About Me : </h4>
-Author👨‍💻: https://github.com/alfianhakim93/ <br>
+Author   : https://github.com/alfianhakim93/ <br>
 Telegram : https://t.me/alfian_hakim <br>
 
 <h4> Instalasi : </h4>
@@ -30,6 +30,7 @@ $ bash Termux-YTDL/install.sh
 - Dapat Mendownload Video dan Subtitlenya <br>
 - Dan Lainnya. <br>
 <br>
+<h4> Screenshot : </h4>
 <p align="center">
   <img alt="YTDL1" width="250" height="350" src="https://drive.google.com/uc?export=view&id=1J4Q_DQrHrgT5uCw0n9EvneOtOeMsPNdp">
   <img alt="YTDL2" width="250" height="350" src="https://drive.google.com/uc?export=view&id=1EgdQie-IHA5-xvmQR9Vq7memW9boSAxb">
