@@ -20,10 +20,8 @@ $ bash Termux-YTDL/install.sh
 ```
 <br>
 #### Penggunaan (2 Cara) : <br>
-```java
-1.Ketik 'ytdl' pada Termux.
-2.Langsung Share/Bagikan Link Ke Termux.
-```
+1. Ketik 'ytdl' pada Termux.
+2. Langsung Share/Bagikan Link Ke Termux.
 <br>
 #### Features:
 - Dapat Mendownload Mp3
