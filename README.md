@@ -33,8 +33,8 @@ $ bash Termux-YTDL/install.sh
 <br>
 <h3> Screenshot : </h3>
 <p align="center">
-  <img alt="YTDL1" width="360" height="650" src="https://drive.google.com/uc?export=view&id=1nok3NLAPYHQiH6mwNXo4wwZrKxZ7lrQy">
-  <img alt="YTDL2" width="360" height="650" src="https://drive.google.com/uc?export=view&id=1H6MXHSUqWdXhZ9p6L4Hf_nVfuXpeN_iT">
+  <img alt="YTDL1" width="350" height="640" src="https://drive.google.com/uc?export=view&id=1nok3NLAPYHQiH6mwNXo4wwZrKxZ7lrQy">
+  <img alt="YTDL2" width="350" height="640" src="https://drive.google.com/uc?export=view&id=1H6MXHSUqWdXhZ9p6L4Hf_nVfuXpeN_iT">
 </p>
 
 <br>
