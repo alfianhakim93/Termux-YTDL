@@ -369,11 +369,11 @@ code2=`head -2 store.txt | tail -1`;
 code3=`head -3 store.txt | tail -1`;
 code4=`head -4 store.txt | tail -1`;
 code5=`head -5 store.txt | tail -1`;
-code6=`head -1 store.txt | tail -1`;
-code7=`head -2 store.txt | tail -1`;
-code8=`head -3 store.txt | tail -1`;
-code9=`head -4 store.txt | tail -1`;
-code10=`head -5 store.txt | tail -1`;
+code6=`head -6 store.txt | tail -1`;
+code7=`head -7 store.txt | tail -1`;
+code8=`head -8 store.txt | tail -1`;
+code9=`head -9 store.txt | tail -1`;
+code10=`head -10 store.txt | tail -1`;
 rm store.txt;
 echo "Hasil Search Ketemu (01/10)...";
 res1=`youtube-dl https://youtube.com/watch?v=$code1 --get-title`;
@@ -941,11 +941,11 @@ code2=`head -2 store.txt | tail -1`;
 code3=`head -3 store.txt | tail -1`;
 code4=`head -4 store.txt | tail -1`;
 code5=`head -5 store.txt | tail -1`;
-code6=`head -1 store.txt | tail -1`;
-code7=`head -2 store.txt | tail -1`;
-code8=`head -3 store.txt | tail -1`;
-code9=`head -4 store.txt | tail -1`;
-code10=`head -5 store.txt | tail -1`;
+code6=`head -6 store.txt | tail -1`;
+code7=`head -7 store.txt | tail -1`;
+code8=`head -8 store.txt | tail -1`;
+code9=`head -9 store.txt | tail -1`;
+code10=`head -10 store.txt | tail -1`;
 rm store.txt;
 echo "Hasil Search Ketemu (01/10)...";
 res1=`youtube-dl https://youtube.com/watch?v=$code1 --get-title`;
@@ -1448,9 +1448,11 @@ echo "Mengambil Details Playlist, Tunggu.....";
 youtube-dl --no-warnings -i -j $URL > playlist.json;
 
 info_pl(){
-title=`jq -r '. | .playlist_title' playlist.json | cut -c-32`;
+judul=`jq -r '. | .playlist_title' playlist.json | cut -c-32`;
 jumlah=`jq -r '. | .n_entries' playlist.json`;
 uploader=`jq -r '. | .playlist_uploader' playlist.json`;
+echo -e "$judul" > jdul.txt ;
+title=`head -1 jdul.txt | tail -1`;
 };
 info_pl;
 
@@ -1599,10 +1601,15 @@ read -p "[Tekan Enter Untuk Melanjutkan]";
 fi;
 done;
 
+
 elif [[ "$URL" == *"/"* ]] && [[ "$URL" != *"http"* ]];
 then
+echo "";
 echo "Mohon Tambahkan 'https://' Pada Link !!!";
+echo "";
 
 else
+echo "";
 echo "Link Tidak Valid !!!!";
+echo "";
 fi;
