@@ -1,17 +1,17 @@
-# Termux-YTDL
-#### Kegunaan :
+<h1> #Termux-YTDL </h4>
+<h4> Kegunaan : </h4>
 Script ini berfungsi untuk mendownload video dan audio dari YouTube dan dari Ribuan situs lainnya, Seperti : <br>
-- YouTube
-- Instagram
-- Twitter
+- YouTube <br>
+- Instagram <br>
+- Twitter <br>
 - List Situs Selengkapnya ada di : <br>
 https://ytdl-org.github.io/youtube-dl/supportedsites.html <br>
 
-#### Me:
+<h4> About Me : </h4>
 Author👨‍💻: https://github.com/alfianhakim93/ <br>
 Telegram : https://t.me/alfian_hakim <br>
 
-#### Instalasi dan Penggunaan :
+<h4> Instalasi : </h4>
 ```java
 $ pkg update && pkg upgrade
 $ pkg install -y git
@@ -24,11 +24,11 @@ $ bash Termux-YTDL/install.sh
 2. Langsung Share/Bagikan Link Ke Termux.
 <br>
 <h4> Features: </h4>
-- Dapat Mendownload Mp3
-- Terdapat Fitur Custom Download
-- Dapat Memilih Kualitas Unduhan
-- Dapat Mendownload Video dan Subtitlenya
-- Dan Lainnya.
+- Dapat Mendownload Mp3 <br>
+- Terdapat Fitur Custom Download <br>
+- Dapat Memilih Kualitas Unduhan <br>
+- Dapat Mendownload Video dan Subtitlenya <br>
+- Dan Lainnya. <br>
 <br>
 <p align="center">
   <img alt="YTDL1" width="250" height="350" src="https://drive.google.com/uc?export=view&id=1J4Q_DQrHrgT5uCw0n9EvneOtOeMsPNdp">
