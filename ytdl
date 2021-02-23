@@ -21,7 +21,7 @@ echo "         GUNAKAN TOOLS DENGAN BIJAK";
 echo "============================================";
 read -p "Masukan URL : " URL;
 
-if [[ "$URL" == *"youtu"* ]] || [[ "$URL" == *"youtube"* ]] && [[ "$URL" != *"playlist"* ]];
+if [[ "$URL" == *"youtu"* ]] || [[ "$URL" == *"youtube"* ]] && [[ "$URL" != *"playlist"* ]] && [[ "$URL" == *"://"* ]];
 then
 
 echo "";
@@ -872,7 +872,7 @@ fi;
 done;
 
 
-elif [[ "$URL" == *"http"* ]] && [[ "$URL" != *"youtu"* ]];
+elif [[ "$URL" == *"://"* ]] && [[ "$URL" != *"youtu"* ]];
 then
 
 while :;
@@ -1622,9 +1622,7 @@ read -p "[Tekan Enter Untuk Melanjutkan]";
 fi;
 done;
 
-
-
-elif [[ "$URL" == *"/"* ]] && [[ "$URL" != *"http"* ]];
+elif [[ "$URL" == *"/"* ]] && [[ "$URL" != *"://"* ]];
 then
 echo "";
 echo "Mohon Tambahkan 'https://' Pada Link !!!";
