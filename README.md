@@ -12,7 +12,7 @@ Author   : https://github.com/alfianhakim93/ <br>
 Telegram : https://t.me/alfian_hakim <br>
 
 <h4> Instalasi : </h4>
-```java
+```
 $ pkg update && pkg upgrade
 $ pkg install -y git
 $ git clone https://github.com/alfianhakim93/Termux-YTDL/
