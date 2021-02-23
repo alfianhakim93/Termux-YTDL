@@ -80,6 +80,7 @@ elif [ $mm == 12 ];
 then
 bln="Desember";
 fi;
+rm video.json;
 };
 info_vid;
 
@@ -1449,10 +1450,15 @@ youtube-dl --no-warnings -i -j $URL > playlist.json;
 
 info_pl(){
 judul=`jq -r '. | .playlist_title' playlist.json | cut -c-32`;
-jumlah=`jq -r '. | .n_entries' playlist.json`;
-uploader=`jq -r '. | .playlist_uploader' playlist.json`;
+total=`jq -r '. | .n_entries' playlist.json`;
+uploaders=`jq -r '. | .playlist_uploader' playlist.json`;
 echo -e "$judul" > jdul.txt ;
 title=`head -1 jdul.txt | tail -1`;
+echo -e "$total" > ttl.txt ;
+jumlah=`head -1 ttl.txt | tail -1`;
+echo -e "$uploaders" > upld.txt ;
+uploader=`head -1 upld.txt | tail -1`;
+rm jdul.txt ttl.txt upld.txt playlist.json;
 };
 info_pl;
 
@@ -1600,7 +1606,6 @@ echo "";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 fi;
 done;
-
 
 elif [[ "$URL" == *"/"* ]] && [[ "$URL" != *"http"* ]];
 then
