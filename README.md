@@ -12,7 +12,6 @@ Author   : https://github.com/alfianhakim93/ <br>
 Telegram : https://t.me/alfian_hakim <br>
 
 <h4> Instalasi : </h4>
-
 ```
 
 $ pkg update && pkg upgrade
@@ -21,7 +20,6 @@ $ git clone https://github.com/alfianhakim93/Termux-YTDL/
 $ bash Termux-YTDL/install.sh
 
 ```
-
 <br>
 <h4> Cara Menggunakan (2 Cara) : </h4>
 1. Ketik 'ytdl' pada Termux.<br>
