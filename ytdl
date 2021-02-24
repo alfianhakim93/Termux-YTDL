@@ -13,6 +13,10 @@ bad="-c -i -f worstvideo+worstaudio --hls-prefer-native --add-metadata --merge-o
 pathtema="/data/data/com.termux/files/bin/ytdl/tema.txt";
 source /data/data/com.termux/files/bin/ytdl/tema.txt;
 
+
+while :;
+do
+
 clear;
 echo -e "$tema";
 echo "============================================";
@@ -194,7 +198,7 @@ audio_url=`head -1 linka.io | tail -1`;
 rm linkv.io linka.io;
 echo "";
 echo "Downloading Video....";
-ffmpeg -ss $start_time -i "$video_url" -ss $start_time -i "$audio_url" -map 0:v -map 1:a -ss 00 -t $trim_time -c:v libx264 -c:a aac "/sdcard/Youtube-DL/Videos/Trim-$fulltitle".mkv -v quiet -stats;
+ffmpeg -ss $start_time -i "$video_url" -ss $start_time -i "$audio_url" -map 0:v -map 1:a -ss 00 -t $trim_time -c:v libx264 -b:v 1000K -maxrate 1000K -bufsize 500K -c:a aac "/sdcard/Youtube-DL/Videos/Trim-$fulltitle".mkv -v quiet -stats;
 echo " ";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 
@@ -293,11 +297,11 @@ echo "           Format Yang Tersedia";
 echo "--------------------------------------------";
 echo "Loading....";
 youtube-dl -F $URL;
-echo "-----------------------------------------------------";
-echo "[*] Gunakan Mode Landscape Agar Kode Format Terlihat";
-echo "-----------------------------------------------------";
+echo "--------------------------------------------";
+echo "[*] Mode Landscape Agar Kode Format Terlihat";
+echo "--------------------------------------------";
 echo "[*] Tekan CTRL + C Untuk Membatalkan";
-echo "-----------------------------------------------------";
+echo "--------------------------------------------";
 read -p "Format Kode Video : " kdv;
 read -p "Format Kode Audio : " kda;
 echo "";
@@ -1459,7 +1463,7 @@ elif [[ "$URL" == *"youtu"* ]] || [[ "$URL" == *"youtube"* ]] && [[ "$URL" == *"
 then
 
 echo "";
-echo "Mengambil Details Playlist, Tunggu Bentar.....";
+echo "Mengambil Details Playlist, Tunggu Bentar...";
 youtube-dl --no-warnings -q -i -j $URL > playlist.json;
 
 info_pl(){
@@ -1582,7 +1586,7 @@ echo "Isikan Index Dengan Urutan Pada Playlist";
 echo "Jika Ingin Mendownload Banyak Gunakan";
 echo "Pemisah Koma Contohnya: 1,3,6,8,10";
 echo "--------------------------------------------";
-echo "Resolusi : 144,240,360,480,720,1080";
+echo "Resolusi: 144,240,360,480,720,1080";
 echo "--------------------------------------------";
 read -p "Resolusi : " Resolusi;
 read -p "Index    : " index;
@@ -1627,9 +1631,13 @@ then
 echo "";
 echo "Mohon Tambahkan 'https://' Pada Link !!!";
 echo "";
+read -p "[Tekan Enter Untuk Melanjutkan]";
 
 else
 echo "";
 echo "Link Tidak Valid !!!!";
 echo "";
+read -p "[Tekan Enter Untuk Melanjutkan]";
 fi;
+
+done;
