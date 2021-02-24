@@ -13,6 +13,9 @@ bad="-c -i -f worstvideo+worstaudio --hls-prefer-native --add-metadata --merge-o
 pathtema="/data/data/com.termux/files/bin/ytdl/tema.txt";
 source /data/data/com.termux/files/bin/ytdl/tema.txt;
 
+while :;
+do
+
 URL=$1;
 
 if [[ "$URL" == *"youtu"* ]] || [[ "$URL" == *"youtube"* ]] && [[ "$URL" != *"playlist"* ]] && [[ "$URL" == *"://"* ]];
@@ -291,11 +294,11 @@ echo "           Format Yang Tersedia";
 echo "--------------------------------------------";
 echo "Loading....";
 youtube-dl -F $URL;
-echo "-----------------------------------------------------";
-echo "[*] Gunakan Mode Landscape Agar Kode Format Terlihat";
-echo "-----------------------------------------------------";
+echo "--------------------------------------------";
+echo "[*] Mode Landscape Agar Kode Format Terlihat";
+echo "--------------------------------------------";
 echo "[*] Tekan CTRL + C Untuk Membatalkan";
-echo "-----------------------------------------------------";
+echo "--------------------------------------------";
 read -p "Format Kode Video : " kdv;
 read -p "Format Kode Audio : " kda;
 echo "";
@@ -1629,9 +1632,13 @@ then
 echo "";
 echo "Mohon Tambahkan 'https://' Pada Link !!!";
 echo "";
+read -p "[Tekan Enter Untuk Melanjutkan]";
 
 else
 echo "";
 echo "Link Tidak Valid !!!!";
 echo "";
+read -p "[Tekan Enter Untuk Melanjutkan]";
 fi;
+
+done;
