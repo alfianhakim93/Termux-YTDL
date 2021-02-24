@@ -13,9 +13,6 @@ bad="-c -i -f worstvideo+worstaudio --hls-prefer-native --add-metadata --merge-o
 pathtema="/data/data/com.termux/files/bin/ytdl/tema.txt";
 source /data/data/com.termux/files/bin/ytdl/tema.txt;
 
-while :;
-do
-
 URL=$1;
 
 if [[ "$URL" == *"youtu"* ]] || [[ "$URL" == *"youtube"* ]] && [[ "$URL" != *"playlist"* ]] && [[ "$URL" == *"://"* ]];
@@ -1640,5 +1637,3 @@ echo "Link Tidak Valid !!!!";
 echo "";
 read -p "[Tekan Enter Untuk Melanjutkan]";
 fi;
-
-done;
