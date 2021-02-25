@@ -41,6 +41,7 @@ dislike=`jq -r '. | .dislike_count' video.json`;
 ch_url=`jq -r '. | .channel_url' video.json`;
 duration=`printf '%02dh %02dm %02ds\n' $(($count%86400/3600)) $(($count%3600/60)) $(($count%60))`;
 dura=`printf '%02d:%02d\n' $(($count%3600/60)) $(($count%60))`;
+reso=`jq -r '.formats[].height' video.json | sort -u -n | sed 's/$/p/' | sed '/null/d' | sed -z 's/\n/,/g;s/,$/\n/'`;
 if [ $mm == 01 ];
 then
 bln="Januari";
@@ -95,6 +96,7 @@ echo "Channel  : $channel";
 echo "Durasi   : $duration";
 echo "Uploaded : $dd $bln $yy";
 echo "Views    : $views";
+echo "Resolusi : $reso";
 echo "Like/Dis : $like Likes / $dislike Dislike";
 echo "--------------------------------------------";
 echo "                Opsi Download";
