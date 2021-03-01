@@ -33,6 +33,7 @@ youtube-dl -j $URL > video.json;
 
 info_vid() {
 title=`jq -r '. | .title' video.json | cut -c-32`;
+trim=`jq -r '. | .title' video.json | cut -c-27`;
 fulltitle=`jq -r '. | .title' video.json`;
 channel=`jq -r '. | .uploader' video.json | cut -c-32`;
 thumbnail=`jq -r '. | .thumbnail' video.json`;
@@ -166,7 +167,7 @@ echo "sampai menit ke 1 maka input seperti:";
 echo "- Start Time : 00:05";
 echo "- End Time   : 01:00";
 echo "--------------------------------------------";
-echo "Judul Video  : $title | cut -c-27";
+echo "Judul Video  : $trim";
 echo "Total Durasi : $dura";
 echo "--------------------------------------------";
 read -p "Resolusi [1-6] : " preso;
