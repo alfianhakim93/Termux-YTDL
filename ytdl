@@ -166,7 +166,7 @@ echo "sampai menit ke 1 maka input seperti:";
 echo "- Start Time : 00:05";
 echo "- End Time   : 01:00";
 echo "--------------------------------------------";
-echo "Judul Video  : `$title | cut -c-27`";
+echo "Judul Video  : $($title | cut -c-27)";
 echo "Total Durasi : $dura";
 echo "--------------------------------------------";
 read -p "Resolusi [1-6] : " preso;
